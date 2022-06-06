@@ -28,7 +28,7 @@ const NotesInput = () => {
                 placeholder="Note here"
             />
             <select>
-                <option value="Tags" selected>Choose tag</option>
+                <option value="Tags" selected disabled>Choose tag</option>
                 <option value="food">Food</option>
                 <option value="travel">Travel</option>
                 <option value="city">City</option>
