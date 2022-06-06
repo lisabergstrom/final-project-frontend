@@ -1,6 +1,8 @@
-import React, {useState, useMapEvents} from "react";
+//import React, {useState, useMapEvents} from "react";
+import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import '../app.css';
+
 // import useSwr from "swr";
 
 // const fetcher = (...args) => fetch(...args).then(response => response.json());
