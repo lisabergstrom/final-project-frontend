@@ -1,61 +1,83 @@
-// /* eslint-disable */
+import React, {useState, useMapEvents} from "react";
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import '../app.css';
+// import useSwr from "swr";
 
-// // import Map from "ol/Map";
-// // import OSM from "ol/source/OSM";
-// // import View from "ol/View";
-// // import React, { useState } from "react";
+// const fetcher = (...args) => fetch(...args).then(response => response.json());
 
-// // const FindMyLocation = () => {
-// //   const [lat, setLat] = useState(null);
-// //   const [lng, setLng] = useState(null);
-// //   const [status, setStatus] = useState(null);
+  function Location() {
+    const position = [59.858131, 17.644621]
+//   const url =
+//     "https://data.police.uk/api/crimes-street/all-crime?lat=52.629729&lng=-1.131592&date=2019-10";
+//   const { data, error } = useSwr(url, { fetcher });
+//   const crimes = data && !error ? data.slice(0, 50) : [];
 
-// import "ol/ol.css";
-// import { Map, View } from "ol";
-// import TileLayer from "ol/layer/Tile";
-// import OSM from "ol/source/OSM";
+return (
+//     // <MapContainer center={[51.507351, -0.127758]} zoom={12} scrollWheelZoom={false}>
+//     //   <TileLayer
+//     //     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+//     //     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+//     //   />
 
-// const Location = new Map({
-//   target: "map",
-//   layers: [
-//     new TileLayer({
-//       source: new OSM(),
-//     }),
-//   ],
-//   view: new View({
-//     center: [0, 0],
-//     zoom: 0,
-//   }),
+//     //   {crimes.map(crime => (
+//     //     <Marker
+//     //       key={crime.id}
+//     //       position={[crime.location.latitude, crime.location.longitude]}
+//     //     />
+//     //   ))}
+      
+//     // </MapContainer>
+   <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+   <TileLayer
+     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+   />
+      <Marker position={position}>
+     <Popup>
+      A pretty CSS3 popup. <br /> Easily customizable.
+  </Popup>
+  </Marker>
+ </MapContainer>
+ );
+}
 
-//   //   const getLocation = () => {
-//   //     if (!navigator.geolocation) {
-//   //       setStatus("Geolocation is not supported by your browser");
-//   //     } else {
-//   //       setStatus("Locating...");
-//   //       navigator.geolocation.getCurrentPosition(
-//   //         (position) => {
-//   //           setStatus(null);
-//   //           setLat(position.coords.latitude);
-//   //           setLng(position.coords.longitude);
-//   //         },
-//   //         () => {
-//   //           setStatus("Unable to retrieve your location");
-//   //         }
-//   //       );
-//   //     }
-//   //   };
 
-//   //   return (
-//   //     <div className="App">
-//   //       <button onClick={getLocation}>Where on Earth am I?</button>
-//   //       <h1>Coordinates</h1>
-//   //       <p>{status}</p>
-//   //       {lat && <p>Latitude: {lat}</p>}
-//   //       {lng && <p>Longitude: {lng}</p>}
-//   //     </div>
-//   //   );
-//   // };
-// });
-// export default Location;
+export default Location;
 
-// // Heading: Where on Earth am I?
+
+ 
+
+//     function LocationMarker() {
+//         const [position, setPosition] = useState(null)
+//         const map = useMapEvents({
+//           click() {
+//             map.locate()
+//           },
+//           locationfound(e) {
+//             setPosition(e.latlng)
+//             map.flyTo(e.latlng, map.getZoom())
+//           },
+//         })
+        
+//         return position === null ? null : (
+//           <Marker position={position}>
+//             <Popup>You are here</Popup>
+//           </Marker>
+//         )
+//       }
+  
+//   render(
+//     <MapContainer
+//       center={{ lat: 51.505, lng: -0.09 }}
+//       zoom={13}
+//       scrollWheelZoom={false}>
+//       <TileLayer
+//         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+//         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+//       />
+//       <LocationMarker />
+//     </MapContainer>
+//   )
+  
+
+//   export default LocationMarker;

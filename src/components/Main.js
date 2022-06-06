@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import user from "reducers/user";
+
 // import paradise1 from "../assets/paradise1.jpg";
 
 const Main = () => {

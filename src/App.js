@@ -10,7 +10,7 @@ import Contact from "components/Contact";
 import Notes from "components/Notes";
 import Packinglist from "components/PackingList";
 import Faq from "components/Faq";
-// import Location from "components/Location";
+import Location from "components/Location";
 
 import { Provider } from "react-redux";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
@@ -35,7 +35,7 @@ export const App = () => {
           <Route path="/notes" element={<Notes />}></Route>
           <Route path="/faq" element={<Faq />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
-          {/* <Route path="/location" element={<Location />}></Route> */}
+          <Route path="/location" element={<Location />}></Route>
         </Routes>
       </BrowserRouter>
     </Provider>
