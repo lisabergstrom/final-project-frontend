@@ -16,9 +16,11 @@ import { Provider } from "react-redux";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 
 import user from "reducers/user";
+import notes from  "reducers/notes"
 
 const reducer = combineReducers({
   user: user.reducer,
+  notes: notes.reducer
 });
 
 const store = configureStore({ reducer });
@@ -31,10 +33,10 @@ export const App = () => {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/" element={<Main />}></Route>
           <Route path="*" element={<NotFound />}></Route>
-          <Route path="/packinglist" element={<Packinglist />}></Route>
+          {/*<Route path="/packinglist" element={<Packinglist />}></Route>*/}
           <Route path="/notes" element={<Notes />}></Route>
-          <Route path="/faq" element={<Faq />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
+          {/*<Route path="/faq" element={<Faq />}></Route>*/}
+          {/*<Route path="/contact" element={<Contact />}></Route>*/}
           {/* <Route path="/location" element={<Location />}></Route> */}
         </Routes>
       </BrowserRouter>
