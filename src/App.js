@@ -12,6 +12,8 @@ import Packinglist from "components/PackingList";
 import Faq from "components/Faq";
 import Location from "components/Location";
 
+// import MapLocation from "./components/Map";
+
 import { Provider } from "react-redux";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 
