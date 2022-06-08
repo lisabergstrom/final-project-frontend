@@ -1,3 +1,4 @@
+/* eslint-disable */
 const BASE_URL = "http://localhost:8080";
 
 const GET_ITEMS = BASE_URL + "/packinglist";

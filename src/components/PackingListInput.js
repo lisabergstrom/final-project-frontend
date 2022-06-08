@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
@@ -18,14 +19,14 @@ const PackingListInput = () => {
       <h3>My Packing List</h3>
       <input type="text" placeholder="Heading here" />
       <textarea type="text" placeholder="Item here" />
-      <select>
+      {/* <select>
         <option value="Tags" selected>
           Choose tag
         </option>
         <option value="clothes">Clothes</option>
         <option value="toilet bag">Toilet bag</option>
         <option value="handluggage">Hand luggage</option>
-      </select>
+      </select> */}
 
       <button type="submit">Add an item!</button>
     </form>

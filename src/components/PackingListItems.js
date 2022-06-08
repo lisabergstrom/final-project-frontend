@@ -1,6 +1,7 @@
+/* eslint-disable */
 import React, { useState, useEffect } from "react";
 import { API_GET_ITEMS } from "utils/utils";
-import PackingList from "./PackingList";
+import packingList from "../reducers/packinglist";
 
 const PackingListItems = () => {
   const [itemList, setItemList] = useState();
@@ -13,7 +14,7 @@ const PackingListItems = () => {
     method: "GET",
     headers: {
       Authorization:
-        "fc7eb897efa0a33e98cd863be9082b5340a1e247b4d9dd47280c5dd52244a9384b2f1e987a77563ac0365b2d2dd67a5c37d526ea7d300289288e80392cea1b4723cb49ebef3e1033ae0eaf9bb202652774f3318d81d00b5b0b2948e0ee4b3d4dc54e26611af301d2dea9bbc781deb0a101aee9bb232f00f9ca4083fa71b668ef",
+        "677d30f8bce32a50cfafa4db533792a125085ab6cd2ce6bd62e628226db794647d672cbfac95d90e7697f049c5e2d3ed795875e77bdc3648fe3455e49b76542d52f21dd4f7f4b94baf97a4681764fe01326f228219dabbafc8bfe6d49b8477eeb6037f267abce8126ffbc947fd647c016194ada8d59dfa3283e63ab8d4495188",
     },
   };
 
