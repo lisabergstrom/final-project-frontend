@@ -35,8 +35,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint ."
   },
-  "browserslist": {
-    "production":[
+  "browserslist": [
     ">0.2%",
     "not dead",
     "not op_mini all"
@@ -47,4 +46,4 @@
     "last 1 safari version"
   ]
 }
-}
+
