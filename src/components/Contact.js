@@ -7,17 +7,17 @@ const Contact = () => {
             <div>
             <h3>Lisa Bergström</h3>
             <p>Frontend developer</p> 
-            <a>Email:</a> 
+        
             </div>
             <div>
             <h3>Emma Berg</h3>
             <p>Frontend developer</p> 
-            <a>Email:</a> 
+      
             </div>
             <div>
             <h3>Terese Claesson</h3>
             <p>Frontend developer</p> 
-            <a>Email:</a> 
+          
             </div>
         </div>
     )
