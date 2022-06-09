@@ -11,6 +11,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^2.3.0",
+    "json-parser": "^3.1.2",
     "navigate": "^0.3.6",
     "ol": "^6.14.1",
     "react": "^18.1.0",

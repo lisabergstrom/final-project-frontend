@@ -1,10 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
 import { useDispatch } from "react-redux"
 
 import addNote from "../reducers/notes"
 
 const NotesInput = () => {
-    const [inputValue, setInputValue] = useState("")
+    //const [inputValue, setInputValue] = useState("")
 
     const dispatch = useDispatch()
 
@@ -28,7 +28,7 @@ const NotesInput = () => {
                 placeholder="Note here"
             />
             <select>
-                <option value="Tags" selected disabled>Choose tag</option>
+                <option value="Tags" disabled>Choose tag</option>
                 <option value="food">Food</option>
                 <option value="travel">Travel</option>
                 <option value="city">City</option>

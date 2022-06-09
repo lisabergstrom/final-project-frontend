@@ -1,46 +1,63 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect } from "react"
+import { useSelector, useDispatch } from "react-redux"
 
 import { API_GET_NOTES } from "utils/utils"
-import Notes from "./Notes"
+
+import notes from "../reducers/notes"
+
 
 
 const NotesList = () => {
-    const [noteList, setNoteList] = useState()
+  //Initial state
+  const noteItems = useSelector((store) => store.notes.items)
+  
+  const accessToken = useSelector((store) => store.user.accessToken)
+  const userId = useSelector((store) => store.user.userId)
+
+  const dispatch = useDispatch()
 
     useEffect(() => {
-        fetchNotes()
-    }, [])
-
-
-    const options = {
+      const options = {
         method: 'GET',
         headers: {
-            'Authorization': 'fc7eb897efa0a33e98cd863be9082b5340a1e247b4d9dd47280c5dd52244a9384b2f1e987a77563ac0365b2d2dd67a5c37d526ea7d300289288e80392cea1b4723cb49ebef3e1033ae0eaf9bb202652774f3318d81d00b5b0b2948e0ee4b3d4dc54e26611af301d2dea9bbc781deb0a101aee9bb232f00f9ca4083fa71b668ef'
+            'Authorization': accessToken
         }
     }
 
-  const fetchNotes = () => {
-    fetch(API_GET_NOTES, options)
-    .then((res) => res.json() )
-    .then((data) => {console.log(data);setNoteList(data)})
-    
-  }
+      fetch(API_GET_NOTES, options)
+      .then((res) => res.json() )
+      .then((data) => {
+        if(data) {
+          dispatch(notes.actions.setNotes(data))
+          dispatch(notes.actions.setErrors(null))
+        } else {
+          dispatch(notes.actions.setNotes([]))
+          dispatch(notes.actions.setErrors(data))
+        }
+      }) 
+  }, [accessToken, userId, dispatch])
 
-fetchNotes()
-//   return (
-//       <div>
-//           {noteList.map((data) => (
-//               <div>
-//                 <div>key={data._id}</div>
-//                 <h3>{data.header}</h3>
-//                 <p>{data.message}</p>
-//                 <p>{data.tags}</p>
-//               </div>
-//           ))}
 
-//       </div>
-      
-//   )
+  if (noteItems.length > 0)
+  return (
+      <div>
+           <h2>My travel memories</h2>
+           {noteItems && 
+           noteItems.map((item) => (
+            <div key={item._id}>
+            <p>{item.heading}</p>
+            <p>{item.message}</p>
+            <button>{item.tags}</button>
+            </div>
+           ))}
+       </div>
+   )
+   return (
+     <div>
+       <h2>Collect travel memories</h2>
+       <p>You have no notes yet..start creating those memorie notes now</p>
+     </div>
+   )
    
 
 }

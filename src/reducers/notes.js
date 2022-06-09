@@ -4,18 +4,21 @@ import { createSlice } from "@reduxjs/toolkit"
 //Reducers respond to actions and takes the current state and update the state based on the currebt action payload
 const notes = createSlice({
     name: "notes",
-    initialState: [
-        {id: 1, title: "note1"},
-        {id: 2, title: "note2"},
-        {id: 3, title: "note3"}
-    ],
-    redducers: {
-        addNote: (state, action) => {
-            const newNote = {
-                id: Date.now(),
-                tite: action.payload.title,
-            }
-            state.push(newNote)
+    initialState: {
+       items: [], 
+       heading: null,
+       message: null,
+       error: null
+    },
+    reducers: {
+        setNotes: (store, action) => {
+                store.items = action.payload
+        },
+        setErrors: (store, action) => {
+            store.error = action.payload
+        }, 
+        deleteNotes: (store, action) => {
+            
         }
     }
 })

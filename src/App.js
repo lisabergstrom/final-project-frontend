@@ -2,6 +2,8 @@
 
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 
 import Login from "components/Login";
 import Main from "components/Main";
@@ -10,10 +12,7 @@ import Contact from "components/Contact";
 import Notes from "components/Notes";
 import Packinglist from "components/PackingList";
 import Faq from "components/Faq";
-// import Location from "components/Location";
-
-import { Provider } from "react-redux";
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import Location from "components/Location";
 
 import user from "reducers/user";
 import notes from  "reducers/notes"
@@ -33,11 +32,11 @@ export const App = () => {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/" element={<Main />}></Route>
           <Route path="*" element={<NotFound />}></Route>
-          {/*<Route path="/packinglist" element={<Packinglist />}></Route>*/}
+          <Route path="/packinglist" element={<Packinglist />}></Route>
           <Route path="/notes" element={<Notes />}></Route>
-          {/*<Route path="/faq" element={<Faq />}></Route>*/}
-          {/*<Route path="/contact" element={<Contact />}></Route>*/}
-          {/* <Route path="/location" element={<Location />}></Route> */}
+          <Route path="/faq" element={<Faq />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/location" element={<Location />}></Route> 
         </Routes>
       </BrowserRouter>
     </Provider>
