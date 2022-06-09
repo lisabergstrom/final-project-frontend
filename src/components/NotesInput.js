@@ -15,7 +15,6 @@ const NotesInput = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-    console.log(tags)
         const options = {
             
             method: "POST",
@@ -30,9 +29,8 @@ const NotesInput = () => {
             })
            
         }
-        console.log(options)
-        
-
+    
+    
         fetch(API_GET_NOTES, options)
         .then((res) => res.json())
         .then((data) => {
@@ -42,9 +40,6 @@ const NotesInput = () => {
         })
             
         }
-    
-
-    //POST REQUEST TO MAKE NEW NOTE
 
     return(
         <form onSubmit={handleSubmit}>

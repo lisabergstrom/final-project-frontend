@@ -23,6 +23,4 @@ const notes = createSlice({
     }
 })
 
-//export const { newNote } = notes.actions
-
 export default notes
