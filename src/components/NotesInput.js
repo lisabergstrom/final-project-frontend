@@ -1,19 +1,48 @@
-import React from "react"
-import { useDispatch } from "react-redux"
+import React, { useState } from "react"
+import { useSelector } from "react-redux"
 
-import addNote from "../reducers/notes"
+import { API_GET_NOTES } from "utils/utils"
+
+
 
 const NotesInput = () => {
-    //const [inputValue, setInputValue] = useState("")
 
-    const dispatch = useDispatch()
+    const accessToken = useSelector((store) => store.user.accessToken)
+
+    const [heading, setHeading] = useState("")
+    const [message, setMessage] = useState("")
+    const [tags, setTags] = useState()
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        dispatch(addNote({
+    console.log(tags)
+        const options = {
             
-        }))
-    }
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json",
+                'Authorization': accessToken
+            },
+            body: JSON.stringify({
+                heading, 
+                message,
+                tags
+            })
+           
+        }
+        console.log(options)
+        
+
+        fetch(API_GET_NOTES, options)
+        .then((res) => res.json())
+        .then((data) => {
+            if(data.success) {
+                window.location.reload()
+            }
+        })
+            
+        }
+    
 
     //POST REQUEST TO MAKE NEW NOTE
 
@@ -22,12 +51,17 @@ const NotesInput = () => {
             <h3>My Travel Notes</h3>
             <input
             type="text"
+            value={heading}
+            onChange={(event) => setHeading(event.target.value)}
             placeholder="Heading here"/>
             <textarea
                 type= "text"
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
                 placeholder="Note here"
             />
-            <select>
+            <select
+            onChange={(event) => setTags(event.target.value)}>
                 <option value="Tags" disabled>Choose tag</option>
                 <option value="food">Food</option>
                 <option value="travel">Travel</option>

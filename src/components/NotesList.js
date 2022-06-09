@@ -37,6 +37,17 @@ const NotesList = () => {
       }) 
   }, [accessToken, userId, dispatch])
 
+  // const deleteNote = () => {
+  //   const options = {
+  //     method: "DELETE",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       'Authorization': accessToken
+  //     },
+  //     body: JSON.stringify({ user: userId })
+  //   }
+  // }
+
 
   if (noteItems.length > 0)
   return (
