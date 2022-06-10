@@ -22,7 +22,7 @@ const Faq = () => {
         content: `Folkhälsomyndigheten`
       },
       {
-        title: 'Försäkringar',
+        title: 'Insurence',
         content: `Försäkringskassan`
       }
   ];

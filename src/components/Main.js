@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import user from "reducers/user";
 import Weather from "./Weather";
+import TimeTicker from "./TickingClock";
 
 // import paradise1 from "../assets/paradise1.jpg";
 
@@ -24,6 +25,7 @@ const Main = () => {
      
        <Weather />
       <h1>Welcome!</h1>
+      <TimeTicker />
       <div>{/* <img src={paradise1} alt="paradise" /> */}</div>
       <button
         type="button"
