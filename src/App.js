@@ -11,6 +11,8 @@ import Contact from "components/Contact";
 import Notes from "components/Notes";
 import Faq from "components/Faq";
 import Location from "components/Location";
+import Packinglist from "reducers/packinglist";
+import Weather from "components/Weather";
 
 import user from "reducers/user";
 import notes from  "reducers/notes"
