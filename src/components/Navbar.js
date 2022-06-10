@@ -4,11 +4,11 @@ const Navbar = () => {
     return (
       <ReactBootStrap.Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <ReactBootStrap.Container>
-      <ReactBootStrap.Navbar.Brand href="#home">TRAVEL JUNKIES</ReactBootStrap.Navbar.Brand>
+      <ReactBootStrap.Navbar.Brand href="/">TRAVEL JUNKIES</ReactBootStrap.Navbar.Brand>
       <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
         <ReactBootStrap.Nav className="me-auto">
-        <ReactBootStrap.Nav.Link href="/weather">Home</ReactBootStrap.Nav.Link>
+        <ReactBootStrap.Nav.Link href="/">Home</ReactBootStrap.Nav.Link>
           <ReactBootStrap.Nav.Link href="/packinglist">Packinglist</ReactBootStrap.Nav.Link>
           <ReactBootStrap.Nav.Link href="/location">Where on earth am I?</ReactBootStrap.Nav.Link>
           <ReactBootStrap.Nav.Link href="/notes">Travel Memoires</ReactBootStrap.Nav.Link>
