@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navbar from "./Navbar";
 import {
   MapContainer,
   TileLayer,
@@ -7,6 +8,7 @@ import {
   useMapEvents,
 } from "react-leaflet";
 import "../app.css";
+
 
 const LocationMarker = () => {
   const [position, setPosition] = useState(null);
@@ -29,6 +31,8 @@ const LocationMarker = () => {
 
 const Location = () => {
   return (
+    <div>
+      <Navbar />
     <MapContainer
       center={{ lat: 51.505, lng: -0.09 }}
       zoom={13}
@@ -40,6 +44,8 @@ const Location = () => {
       />
       <LocationMarker />
     </MapContainer>
+
+    </div>
   );
 };
 

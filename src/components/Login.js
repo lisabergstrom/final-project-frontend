@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "utils/utils";
+import Footer from "./Footer";
 
 import user from "reducers/user";
 
@@ -117,7 +118,10 @@ const Login = () => {
         )}
         <button type="submit">Submit</button>
       </form>
+     <Footer/>
+
     </section>
+ 
   );
 };
 
