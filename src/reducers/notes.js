@@ -18,6 +18,8 @@ const notes = createSlice({
             store.error = action.payload
         }, 
         deleteNotes: (store, action) => {
+            const eraseNote = store.items.filter((note) => note._id !== action.payload)
+            store.items = eraseNote
             
         }
     }
