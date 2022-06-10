@@ -37,9 +37,8 @@ const NotesInput = () => {
             if(data.success) {
                 window.location.reload()
             }
-        })
-            
-        }
+        })   
+    }
 
     return(
         <form onSubmit={handleSubmit}>
