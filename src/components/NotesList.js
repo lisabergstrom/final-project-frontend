@@ -38,6 +38,7 @@ const NotesList = () => {
   }, [accessToken, userId, dispatch])
 
   const deleteNote = (notesId) => {
+    console.log(notesId)
     const options = {
       method: "DELETE",
       headers: {
@@ -48,7 +49,7 @@ const NotesList = () => {
     }
 
 
-    fetch(API_DELETE_NOTES, options)
+    fetch(API_DELETE_NOTES(notesId), options)
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
@@ -70,15 +71,17 @@ const NotesList = () => {
         {noteItems &&
           noteItems.map((item) => (
             <div>
-            <div key={item._id}>
-              <p>{item.heading}</p>
-              <p>{item.message}</p>
-              <button>{item.tags}</button>
+              <div key={item._id}>
+                <p>{item.heading}</p>
+                <p>{item.message}</p>
+                <button>{item.tags}</button>
+              </div>
+              <button onClick={() => deleteNote(item._id)}>Delete</button>
             </div>
-          <button onClick={() => deleteNote()}>Delete</button>
-          </div>
           ))}
-          
+
+
+
       </div>
     )
   return (
