@@ -11,7 +11,7 @@ import Contact from "components/Contact";
 import Notes from "components/Notes";
 import Faq from "components/Faq";
 import Location from "components/Location";
-import Weather from "components/Weather";
+// import Weather from "components/Weather";
 import PackingList from "components/PackingList";
 
 import user from "reducers/user";
@@ -31,7 +31,7 @@ const App = () => {
         <Routes>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/" element={<Main />}></Route>
-          <Route path="/weather" element={<Weather />}></Route>
+          {/* <Route path="/weather" element={<Weather />}></Route> */}
           <Route path="*" element={<NotFound />}></Route>
           <Route path="/packinglist" element={<PackingList />}></Route>
           <Route path="/notes" element={<Notes />}></Route> 

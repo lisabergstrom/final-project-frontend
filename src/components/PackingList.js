@@ -2,10 +2,12 @@ import React from "react";
 
 import PackingListInput from "./PackingListInput";
 import PackingListItems from "./PackingListItems";
+import Navbar from "./Navbar";
 
 const PackingList = () => {
   return (
     <div>
+       <Navbar />
       <PackingListInput />
       <PackingListItems />
     </div>
