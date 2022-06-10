@@ -1,22 +1,27 @@
 /* eslint-disable */
 import React, { useState } from "react";
+import DisplayWeather from "./DisplayWeather";
 
 function Weather() {
-  const [weather, setWeather] = useState([]);
-  const [form, setForm] = useState({
+ 
+
+  const APIKEY="1db7a0f6af224b79d65f2ccf40f9e740";
+
+   const [weather, setWeather] = useState([]);
+   const [form, setForm] = useState({
     city: "",
     country: "",
   });
 
-  const APIKEY="1db7a0f6af224b79d65f2ccf40f9e740";
   async function weatherData(e) {
+
     e.preventDefault();
     if (form.city == "") {
       alert("Add values");
     } else {
-      const data = await fetch(
+          const data = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&APPID=${APIKEY}`
-      )
+        )
         .then((res) => res.json())
         .then((data) => data);
 
@@ -58,12 +63,12 @@ function Weather() {
         </button>
       </form>
 
-      {/* {console.log(weather)}
+   
       {weather.data != undefined ? (
         <div>
           <DisplayWeather data={weather.data} />
         </div>
-      ) : null} */}
+      ) : null}
     </div>
   );
 }
