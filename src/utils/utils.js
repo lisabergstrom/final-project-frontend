@@ -1,3 +1,4 @@
+/* eslint-disable */
 const BASE_URL = "http://localhost:8080";
 
 const GET_NOTES = BASE_URL+"/notes"
@@ -12,3 +13,7 @@ export const API_GET_NOTES = GET_NOTES
 export const API_DELETE_NOTES = DELETE_NOTES
 
 
+const GET_ITEMS = BASE_URL + "/packinglist";
+
+
+export const API_GET_ITEMS = GET_ITEMS;
