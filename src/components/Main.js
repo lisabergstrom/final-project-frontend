@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import user from "reducers/user";
 import Weather from "./Weather";
+import Footer from "./Footer";
 
 // import paradise1 from "../assets/paradise1.jpg";
 
@@ -32,8 +33,9 @@ const Main = () => {
           dispatch(user.actions.setAccessToken(null));
         }}
       >
-        Log out
+        Sign out
       </button>
+      <Footer/>
     </>
   );
 };

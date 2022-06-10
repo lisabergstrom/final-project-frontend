@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
-
+import Footer from './Footer';
 const Contact = () => {
     return (
         <div>
@@ -22,6 +22,7 @@ const Contact = () => {
             <p>Frontend developer</p> 
           
             </div>
+            <Footer/>
         </div>
     )
 }

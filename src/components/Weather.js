@@ -43,7 +43,7 @@ const Weather  = () => {
   return (
     <div className="weather">
        <Navbar />
-      <span className="title">Weather App</span>
+      <span className="title">check the weather at your destination</span>
       <br />
       <form>
         <input
