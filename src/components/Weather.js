@@ -2,9 +2,8 @@
 import React, { useState } from "react";
 import DisplayWeather from "./DisplayWeather";
 
-function Weather() {
+const Weather  = () => {
  
-
   const APIKEY="1db7a0f6af224b79d65f2ccf40f9e740";
 
    const [weather, setWeather] = useState([]);
