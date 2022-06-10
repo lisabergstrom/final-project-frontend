@@ -12,6 +12,7 @@ import Notes from "components/Notes";
 import Faq from "components/Faq";
 import Location from "components/Location";
 
+
 import user from "reducers/user";
 import notes from  "reducers/notes"
 
