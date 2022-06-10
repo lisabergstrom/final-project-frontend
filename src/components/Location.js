@@ -9,6 +9,7 @@ import {
 } from "react-leaflet";
 import "../app.css";
 
+
 const LocationMarker = () => {
   const [position, setPosition] = useState(null);
   const map = useMapEvents({
@@ -43,6 +44,7 @@ const Location = () => {
       />
       <LocationMarker />
     </MapContainer>
+
     </div>
   );
 };

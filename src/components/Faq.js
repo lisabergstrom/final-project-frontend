@@ -1,6 +1,7 @@
 import React from 'react';
 import Accordion from 'components/Accordion';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 
 const Faq = () => {
@@ -36,6 +37,7 @@ const Faq = () => {
           <Accordion title={title} content={content} />
         ))}
       </div>
+      <Footer/>
     </div>
   );
 };
