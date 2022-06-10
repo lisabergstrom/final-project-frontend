@@ -15,6 +15,7 @@ const NotesInput = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        console.log(tags)
         const options = {
             
             method: "POST",
@@ -26,14 +27,13 @@ const NotesInput = () => {
                 heading, 
                 message,
                 tags
-            })
-           
+            }) 
         }
-    
     
         fetch(API_GET_NOTES, options)
         .then((res) => res.json())
         .then((data) => {
+
             if(data.success) {
                 window.location.reload()
             }
@@ -55,9 +55,10 @@ const NotesInput = () => {
                 onChange={(event) => setMessage(event.target.value)}
                 placeholder="Note here"
             />
-            <select
+            <select 
+            defaultValue={"DEFAULT"}
             onChange={(event) => setTags(event.target.value)}>
-                <option value="Tags" disabled>Choose tag</option>
+                <option value="DEFAULT" disabled>Choose tag</option>
                 <option value="food">Food</option>
                 <option value="travel">Travel</option>
                 <option value="city">City</option>

@@ -1,7 +1,7 @@
 const BASE_URL = "http://localhost:8080";
 
 const GET_NOTES = BASE_URL+"/notes"
-const DELETE_NOTES = (notesId) => `${BASE_URL}/${notesId}`
+const DELETE_NOTES = (notesId) => `${GET_NOTES}/${notesId}`
 //const DELETE_NOTES = BASE_URL+`/notes${notes._id}`
 
 //To get the login/sign in page
