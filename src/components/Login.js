@@ -1,27 +1,29 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector, batch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "utils/utils";
 
 import user from "reducers/user";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [validationError, setValidationError] = useState(null);
+  const accessToken = useSelector((store) => store.user.accessToken)
 
-  const [mode, setMode] = useState("register");
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  const [validationError, setValidationError] = useState(null)
+
+  const [mode, setMode] = useState("login")
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const accessToken = useSelector((store) => store.user.accessToken);
+  
 
   useEffect(() => {
     if (accessToken) {
       navigate("/");
     }
-  }, [accessToken]);
+  }, [accessToken, navigate]);
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -31,29 +33,34 @@ const Login = () => {
       headers: {
         "Content-Type": "application/json",
       },
-
       body: JSON.stringify({ username, password }),
     };
+
     fetch(API_URL(mode), options)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.success) {
-          batch(() => {
-            dispatch(user.actions.setUserId(data.userId));
-            dispatch(user.actions.setAccessToken(data.accessToken));
-            dispatch(user.actions.setUserName(data.username));
-            dispatch(user.actions.setError(null));
-            setValidationError(null);
-          });
+          dispatch(user.actions.setAccessToken(data.accessToken))
+            
+          dispatch(user.actions.setUserId(data.userId))
+          dispatch(user.actions.setUserName(data.username));
+          dispatch(user.actions.setError(null));
+          setValidationError(null);
+
+          localStorage.setItem(
+            "user",
+            JSON.stringify({
+              userId: data.userId,
+              username: data.username,
+              accessToken: data.accessToken
+            })
+          )
         } else {
-          batch(() => {
             dispatch(user.actions.setError(data.response));
             dispatch(user.actions.setUserId(null));
             dispatch(user.actions.setAccessToken(null));
             dispatch(user.actions.setUserName(null));
-            setValidationError(data.response);
-          });
+            setValidationError(data.message);
         }
       });
   };

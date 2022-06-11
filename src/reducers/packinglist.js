@@ -2,7 +2,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const packinglist = createSlice({
-  name: "listitem",
+  name: "packinglist",
   initialState: {
     items: [],
     heading: null,
@@ -10,7 +10,7 @@ const packinglist = createSlice({
     error: null
   },
   reducers: {
-    addListItem: (store, action) => {
+    setListItem: (store, action) => {
       store.items = action.payload
     },
     setErrors: (store, action) => {
@@ -25,4 +25,4 @@ const packinglist = createSlice({
 
 //add isCompleted to be able to check the packinglist
 
-export default packinglist;
+export default packinglist
