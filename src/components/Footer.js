@@ -9,7 +9,7 @@ const Footer = () => {
       <h1 style={{ color: "white", 
                    textAlign: "center", 
                    marginTop: "-50px" }}>
-       TRVEL JUNKIES
+       TRAVEL JUNKIES
       </h1>
       <h4 style={{ color: "white", 
                    textAlign: "center", 
