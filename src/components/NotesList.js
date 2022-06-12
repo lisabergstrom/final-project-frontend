@@ -38,7 +38,6 @@ const NotesList = () => {
   }, [accessToken, userId, dispatch])
 
   const deleteNote = (notesId) => {
-    console.log(notesId)
     const options = {
       method: "DELETE",
       headers: {

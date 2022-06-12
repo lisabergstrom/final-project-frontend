@@ -19,7 +19,14 @@ const packinglist = createSlice({
     deleteListItem: (store, action) => {
       const eraseListItem = store.items.filter((item) => item._id !== action.payload)
       store.items = eraseListItem
-    }
+    }, 
+    // toggleItem: (store, action) => {
+    //   store.items.forEach((item) => {
+    //     if(item._id === action.payload) {
+    //       item.isCompleted = !item.isCompleted
+    //     }
+    //   })
+    // }
   }
 })
 

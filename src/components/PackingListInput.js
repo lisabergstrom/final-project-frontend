@@ -11,9 +11,7 @@ const PackingListInput = () => {
   
   const [heading, setHeading] = useState("")
   const [message, setMessage] = useState("")
-  //const [isCompleted, setIsCompleted] = useState(false)
-
-
+ 
   const handleSubmit = (event) => {
     event.preventDefault()
     const options = {
@@ -24,7 +22,8 @@ const PackingListInput = () => {
       },
       body: JSON.stringify({
         heading, 
-        message
+        message,
+        isCompleted
       })
     }
 

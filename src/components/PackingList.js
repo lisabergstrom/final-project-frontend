@@ -3,7 +3,7 @@ import React from "react";
 import PackingListInput from "./PackingListInput";
 import PackingListItems from "./PackingListItems";
 import Navbar from "./Navbar";
-//import Footer from "./Footer";
+import Footer from "./Footer";
 
 const PackingList = () => {
   return (
@@ -11,7 +11,7 @@ const PackingList = () => {
        <Navbar />
       <PackingListInput />
       <PackingListItems />
-      {/*<Footer/>*/}
+      <Footer/>
     </div>
   );
 };

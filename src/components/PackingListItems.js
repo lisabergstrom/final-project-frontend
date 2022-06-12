@@ -2,7 +2,7 @@
 import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
-import { API_GET_LIST } from "utils/utils"
+import { API_GET_LIST, API_DELETE_LIST } from "utils/utils"
 
 import packinglist from "../reducers/packinglist"
 
@@ -36,7 +36,28 @@ const PackingListItems = () => {
 
   }, [accessToken, userId, dispatch])
 
- 
+ const deleteItem = (listId) => {
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      'Authorization': accessToken
+    },
+    body: JSON.stringify({ user: userId, })
+  }
+
+  fetch(API_DELETE_LIST(listId), options)
+  .then((res) => res.json())
+  .then((data) => {
+    if (data) {
+      dispatch(packinglist.actions.deleteListItem(listId))
+      dispatch(packinglist.actions.setErrors(null))
+    } else {
+      dispatch(packinglist.actions.setListItem([]))
+      dispatch(packinglist.actions.setErrors(data.response))
+    }
+  })  
+ }
 
 
 
@@ -51,7 +72,7 @@ const PackingListItems = () => {
                 <p>{item.heading}</p>
                 <p>{item.message}</p>
               </div>
-              <button>Delete</button>
+              <button onClick={() => deleteItem(item._id)}>Delete</button>
             </div>
           ))}
       </div>
