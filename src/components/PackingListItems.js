@@ -15,7 +15,6 @@ const PackingListItems = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    console.log(accessToken)
     const options = {
       method: "GET",
       headers: {
@@ -26,8 +25,7 @@ const PackingListItems = () => {
     fetch(API_GET_LIST, options)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
-        if (data.success) {
+        if (data) {
           dispatch(packinglist.actions.setListItem(data))
           dispatch(packinglist.actions.setErrors(null))
         } else {
@@ -36,7 +34,9 @@ const PackingListItems = () => {
         }
       })
 
-  }, [accessToken, userId, dispatch]);
+  }, [accessToken, userId, dispatch])
+
+ 
 
 
 
