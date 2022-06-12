@@ -15,13 +15,14 @@ import Weather from "components/Weather";
 import PackingList from "components/PackingList";
 import Signout from "components/Signout"
 
-
 import user from "reducers/user";
 import notes from  "reducers/notes"
+import packinglist from "reducers/packinglist"
 
 const reducer = combineReducers({
   user: user.reducer,
-  notes: notes.reducer
+  notes: notes.reducer,
+  packinglist: packinglist.reducer
 });
 
 const store = configureStore({ reducer });

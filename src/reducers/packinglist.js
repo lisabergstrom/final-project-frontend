@@ -2,23 +2,34 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const packinglist = createSlice({
-  name: "item",
-  initialState: [
-    { id: 1, title: "item1" },
-    { id: 2, title: "item2" },
-    { id: 3, title: "item3" },
-  ],
-  redducers: {
-    addItem: (state, action) => {
-      const newItem = {
-        id: Date.now(),
-        tite: action.payload.title,
-      };
-      state.push(newItem);
-    },
+  name: "packinglist",
+  initialState: {
+    items: [],
+    heading: null,
+    message: null,
+    error: null
   },
-});
+  reducers: {
+    setListItem: (store, action) => {
+      store.items = action.payload
+    },
+    setErrors: (store, action) => {
+      store.error = action.payload
+    },
+    deleteListItem: (store, action) => {
+      const eraseListItem = store.items.filter((item) => item._id !== action.payload)
+      store.items = eraseListItem
+    }, 
+    // toggleItem: (store, action) => {
+    //   store.items.forEach((item) => {
+    //     if(item._id === action.payload) {
+    //       item.isCompleted = !item.isCompleted
+    //     }
+    //   })
+    // }
+  }
+})
 
-export const { newItem } = packinglist.actions;
+//add isCompleted to be able to check the packinglist
 
-export default packinglist;
+export default packinglist

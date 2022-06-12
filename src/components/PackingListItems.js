@@ -1,47 +1,89 @@
 /* eslint-disable */
-import React, { useState, useEffect } from "react";
-import { API_GET_ITEMS } from "utils/utils";
-import packingList from "../reducers/packinglist";
+import React, { useEffect } from "react"
+import { useSelector, useDispatch } from "react-redux"
+
+import { API_GET_LIST, API_DELETE_LIST } from "utils/utils"
+
+import packinglist from "../reducers/packinglist"
+
 
 const PackingListItems = () => {
-  const [itemList, setItemList] = useState();
+  const listItem = useSelector((store) => store.packinglist.items)
+  const accessToken = useSelector((store) => store.user.accessToken)
+  const userId = useSelector((store) => store.user.userId)
+
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    fetchItems();
-  }, []);
+    const options = {
+      method: "GET",
+      headers: {
+        "Authorization": accessToken
+      }
+    }
 
-  const options = {
-    method: "GET",
-    headers: {
-      Authorization:
-        "677d30f8bce32a50cfafa4db533792a125085ab6cd2ce6bd62e628226db794647d672cbfac95d90e7697f049c5e2d3ed795875e77bdc3648fe3455e49b76542d52f21dd4f7f4b94baf97a4681764fe01326f228219dabbafc8bfe6d49b8477eeb6037f267abce8126ffbc947fd647c016194ada8d59dfa3283e63ab8d4495188",
-    },
-  };
-
-  const fetchItems = () => {
-    fetch(API_GET_ITEMS, options)
+    fetch(API_GET_LIST, options)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        setItemList(data);
-      });
-  };
+        if (data) {
+          dispatch(packinglist.actions.setListItem(data))
+          dispatch(packinglist.actions.setErrors(null))
+        } else {
+          dispatch(packinglist.actions.setListItem([]))
+          dispatch(packinglist.actions.setErrors(data))
+        }
+      })
 
-  fetchItems();
-  //   return (
-  //       <div>
-  //           {noteList.map((data) => (
-  //               <div>
-  //                 <div>key={data._id}</div>
-  //                 <h3>{data.header}</h3>
-  //                 <p>{data.message}</p>
-  //                 <p>{data.tags}</p>
-  //               </div>
-  //           ))}
+  }, [accessToken, userId, dispatch])
 
-  //       </div>
+ const deleteItem = (listId) => {
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      'Authorization': accessToken
+    },
+    body: JSON.stringify({ user: userId, })
+  }
 
-  //   )
+  fetch(API_DELETE_LIST(listId), options)
+  .then((res) => res.json())
+  .then((data) => {
+    if (data) {
+      dispatch(packinglist.actions.deleteListItem(listId))
+      dispatch(packinglist.actions.setErrors(null))
+    } else {
+      dispatch(packinglist.actions.setListItem([]))
+      dispatch(packinglist.actions.setErrors(data.response))
+    }
+  })  
+ }
+
+
+
+  if (listItem.length > 0)
+    return (
+      <div>
+        <h4>My packinglist</h4>
+        {listItem &&
+          listItem.map((item) => (
+            <div>
+              <div>
+                <p>{item.heading}</p>
+                <p>{item.message}</p>
+              </div>
+              <button onClick={() => deleteItem(item._id)}>Delete</button>
+            </div>
+          ))}
+      </div>
+    )
+
+    return (
+      <div>
+        <h4>Your packinglist is empty</h4>
+        <p>Start adding items for your next adventure</p>
+      </div>
+    )
 };
 
 export default PackingListItems;
