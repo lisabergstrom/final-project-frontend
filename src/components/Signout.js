@@ -14,7 +14,7 @@ const Signout = () => {
       if (!accessToken) {
         navigate("/login");
       }
-    }, [accessToken]);
+    }, [accessToken, navigate]);
   
     return (
         <button

@@ -22,8 +22,7 @@ const PackingListInput = () => {
       },
       body: JSON.stringify({
         heading, 
-        message,
-        isCompleted
+        message
       })
     }
 
