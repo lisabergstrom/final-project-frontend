@@ -15,7 +15,6 @@ const NotesInput = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log(tags)
         const options = {
             
             method: "POST",

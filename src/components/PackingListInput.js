@@ -19,8 +19,8 @@ const PackingListInput = () => {
     const options = {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "Authorization": accessToken
+        "Content-Type" : "application/json",
+        'Authorization': accessToken
       },
       body: JSON.stringify({
         heading, 
