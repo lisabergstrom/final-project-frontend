@@ -1,4 +1,5 @@
 import React from "react";
+import Signout from "components/Signout"
 import {
   Box,
   } from "../components/FooterStyles"
@@ -16,8 +17,10 @@ const Footer = () => {
                    marginTop: "10px" }}>
       Created by Emma, Terese and Lisa | Technigo Fontend Bootcamp 2022
       </h4>
-      
+      <Signout/>  
     </Box>
+   
   );
+  
 };
 export default Footer;

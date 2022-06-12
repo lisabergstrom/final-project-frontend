@@ -17,9 +17,9 @@ const Navbar = () => {
           <ReactBootStrap.Nav.Link href="/contact">Contact</ReactBootStrap.Nav.Link>
           </ReactBootStrap.Nav>
         <ReactBootStrap.Nav>
-          <ReactBootStrap.Nav.Link eventKey={2} href="/login">
+          {/* <ReactBootStrap.Nav.Link eventKey={2} href="/signout">
             Sign out
-          </ReactBootStrap.Nav.Link>
+          </ReactBootStrap.Nav.Link> */}
         </ReactBootStrap.Nav>
       </ReactBootStrap.Navbar.Collapse>
       </ReactBootStrap.Container>
