@@ -1,6 +1,9 @@
 /* eslint-disable */
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+
 
 import Login from "components/Login";
 import Main from "components/Main";
@@ -8,12 +11,9 @@ import NotFound from "components/NotFound";
 import Contact from "components/Contact";
 import Notes from "components/Notes";
 import Faq from "components/Faq";
-import PackingList from "components/PackingList";
-import Weather from "components/Weather";
 import Location from "components/Location";
-
-import { Provider } from "react-redux";
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import Weather from "components/Weather";
+import PackingList from "components/PackingList";
 
 import user from "reducers/user"
 import packinglist from "reducers/packinglist"
@@ -26,7 +26,7 @@ const reducer = combineReducers({
 
 const store = configureStore({ reducer });
 
-export const App = () => {
+const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
@@ -45,3 +45,5 @@ export const App = () => {
     </Provider>
   );
 };
+
+export default App
