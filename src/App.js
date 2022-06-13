@@ -13,7 +13,6 @@ import Faq from "components/Faq";
 import Location from "components/Location";
 import Weather from "components/Weather";
 import PackingList from "components/PackingList";
-import Signout from "components/Signout"
 
 import user from "reducers/user";
 import notes from  "reducers/notes"

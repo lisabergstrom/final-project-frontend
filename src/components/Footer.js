@@ -1,5 +1,5 @@
 import React from "react";
-import Signout from "components/Signout"
+import Signout from "components/Signout";
 import {
   Box,
   } from "../components/FooterStyles"
