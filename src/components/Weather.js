@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { useState } from "react";
 import DisplayWeather from "./DisplayWeather";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 
 const Weather  = () => {
  
@@ -42,7 +42,6 @@ const Weather  = () => {
   };
   return (
     <div className="weather">
-       <Navbar />
       <span className="title">check the weather at your destination</span>
       <br />
       <form>

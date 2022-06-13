@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "utils/utils";
+import Hero from "./Hero"
 import Footer from "./Footer";
 
 import user from "reducers/user";
@@ -69,6 +70,7 @@ const Login = () => {
 
   return (
     <section>
+      <Hero/>
       <h1>Sign in or Sign up</h1>
       <div className="radio-container">
         <label htmlFor="register">Register</label>
