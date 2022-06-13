@@ -7,6 +7,7 @@ const packinglist = createSlice({
     items: [],
     heading: null,
     message: null,
+    isCompleted: false,
     error: null
   },
   reducers: {
@@ -20,13 +21,10 @@ const packinglist = createSlice({
       const eraseListItem = store.items.filter((item) => item._id !== action.payload)
       store.items = eraseListItem
     }, 
-    // toggleItem: (store, action) => {
-    //   store.items.forEach((item) => {
-    //     if(item._id === action.payload) {
-    //       item.isCompleted = !item.isCompleted
-    //     }
-    //   })
-    // }
+    toggleItem: (store, action) => {
+      const checkedItem = store.items.find((item) => item._id === action.payload)
+      checkedItem.isCompleted = !checkedItem.isCompleted
+    }
   }
 })
 

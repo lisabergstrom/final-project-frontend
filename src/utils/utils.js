@@ -6,6 +6,7 @@ const DELETE_NOTES = (notesId) => `${GET_NOTES}/${notesId}`
 
 const GET_LIST = BASE_URL+"/packinglist"
 const DELETE_LIST = (listId) => `${GET_LIST}/${listId}`
+const CHECK_LIST = (listId) => `${GET_LIST}/${listId}/completed`
 
 
 
@@ -19,5 +20,7 @@ export const API_DELETE_NOTES = DELETE_NOTES
 export const API_GET_LIST = GET_LIST
 //To delete item from list
 export const API_DELETE_LIST = DELETE_LIST
+//To toggle checked or unchecked
+export const API_CHECK_LIST = CHECK_LIST
 
 
