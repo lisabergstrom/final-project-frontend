@@ -10,12 +10,6 @@ const DisplayWeather = (props) => {
       {data.cod !== 404 ? (
         <React.Fragment>
           <div className="maincard">
-            <span className="cardtitle">
-              {data.name} , {data.sys.country}. Weather
-            </span>
-            <span className="cardsubtitle">
-              As of {new Date().toLocaleTimeString()}
-            </span>
             <h1>
               {" "}
               {Math.floor(data.main.temp - 273.15)}
@@ -42,8 +36,6 @@ const DisplayWeather = (props) => {
             </div>
             <div className="section2">
               <div>
-                    <h4>Wind</h4>
-                    <span>{Math.floor((data.wind.speed * 18) / 5)} km/hr</span>
                     <h4>Sunrise</h4>
                     <span>
                       {new Date(data.sys.sunrise * 1000).toLocaleTimeString()}

@@ -62,7 +62,6 @@ const NotesList = () => {
       })
   }
 
-
   if (noteItems.length > 0)
     return (
       <div>
@@ -85,8 +84,8 @@ const NotesList = () => {
     )
   return (
     <div>
-      <h2>Collect travel memories</h2>
-      <p>You have no notes yet..start creating those memorie notes now</p>
+      <h2>Collect your travel memories</h2>
+      <p>You have no memories saved yet, start creeating your travel memories now so you do not forgett them</p>
     </div>
   )
 

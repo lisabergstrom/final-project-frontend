@@ -19,8 +19,7 @@ const notes = createSlice({
         }, 
         deleteNotes: (store, action) => {
             const eraseNote = store.items.filter((note) => note._id !== action.payload)
-            store.items = eraseNote
-            
+            store.items = eraseNote    
         }
     }
 })

@@ -57,11 +57,14 @@ const NotesInput = () => {
             defaultValue={"DEFAULT"}
             onChange={(event) => setTags(event.target.value)}>
                 <option value="DEFAULT" disabled>Choose tag</option>
-                <option value="food">Food</option>
-                <option value="travel">Travel</option>
+                <option value="accommodation">Accommodation</option>
+                <option value="activities">Activities</option>
                 <option value="city">City</option>
+                <option value="food">Food n Drinks</option>
+                <option value="memories">Memories</option>
+                <option value="sightseeing">Sightseeing</option>
+                <option value="travel">Travel</option>  
             </select>
-
             <button type="submit">Add note!</button>
         </form>
     )
