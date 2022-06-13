@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, {useEffect} from "react";
 import user from "reducers/user";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +14,7 @@ const Signout = () => {
       if (!accessToken) {
         navigate("/login");
       }
-    }, [accessToken]);
+    }, [accessToken, navigate]);
   
     return (
         <button
@@ -30,4 +30,4 @@ const Signout = () => {
     )
 }
 
-export default Signout
+export default Signout;
