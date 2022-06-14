@@ -54,6 +54,7 @@ const Images = styled.img`
 height:200px;
 width:200px; 
 padding:20px;
+box-shadow: 4px 3px 7px 2px #00000040;
 `
 
 const Main = () => {
