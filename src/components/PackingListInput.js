@@ -37,8 +37,15 @@ const PackingListInput = () => {
 
   return (
     <ListArea>
+           <Header>My Packing List</Header>
     <FormArea onSubmit={handleSubmit}>
-      <Header>My Packing List</Header>
+    <TextArea 
+      type="text" 
+      value={message}
+      onChange={(event) => setMessage(event.target.value)}
+      placeholder="Add your item here" 
+      />
+      
       <CategoryText
       type="text" 
       value={heading}
@@ -46,12 +53,7 @@ const PackingListInput = () => {
       placeholder="Category" 
       />
 
-      <TextArea 
-      type="text" 
-      value={message}
-      onChange={(event) => setMessage(event.target.value)}
-      placeholder="Add your item here" 
-      />
+      
 
       <AddButton type="submit">Add</AddButton>
 
