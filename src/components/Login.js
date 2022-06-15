@@ -118,8 +118,6 @@ const Login = () => {
         )}
         <button type="submit">Submit</button>
       </form>
-     <Footer/>
-
     </section>
  
   );
