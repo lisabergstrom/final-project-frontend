@@ -50,7 +50,7 @@ const PackingListInput = () => {
       type="text" 
       value={heading}
       onChange={(event) => setHeading(event.target.value)}
-      placeholder="Category" 
+      placeholder="Tag" 
       />
 
       
