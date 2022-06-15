@@ -1,5 +1,5 @@
 /* eslint-disable */
-const BASE_URL = "http://localhost:8080"
+const BASE_URL = "https://bbackendtravel.herokuapp.com"
 
 const GET_NOTES = BASE_URL+"/notes"
 const DELETE_NOTES = (notesId) => `${GET_NOTES}/${notesId}`

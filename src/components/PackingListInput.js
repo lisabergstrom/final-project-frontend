@@ -1,9 +1,9 @@
 /* eslint-disable */
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-
 import { API_GET_LIST } from "utils/utils"
 
+import { ListArea, Header, FormArea, AddButton, CategoryText, TextArea } from "./PackinglistStyles";
 
 const PackingListInput = () => {
   
@@ -36,25 +36,29 @@ const PackingListInput = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>My Packing List</h3>
-      <input 
-      type="text" 
-      value={heading}
-      onChange={(event) => setHeading(event.target.value)}
-      placeholder="Category here" 
-      />
-
-      <textarea 
+    <ListArea>
+           <Header>My Packing List</Header>
+    <FormArea onSubmit={handleSubmit}>
+    <TextArea 
       type="text" 
       value={message}
       onChange={(event) => setMessage(event.target.value)}
-      placeholder="Item here" 
+      placeholder="Add your item here" 
+      />
+      
+      <CategoryText
+      type="text" 
+      value={heading}
+      onChange={(event) => setHeading(event.target.value)}
+      placeholder="Category" 
       />
 
-      <button type="submit">Add an item!</button>
+      
 
-    </form>
+      <AddButton type="submit">Add</AddButton>
+
+    </FormArea>
+    </ListArea>
   );
 };
 
