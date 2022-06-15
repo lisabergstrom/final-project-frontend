@@ -6,6 +6,26 @@ import { API_URL } from "utils/utils";
 import Hero from "./Hero"
 import Footer from "./Footer";
 
+
+import openeye from "../assets/openeye.png";
+import closedeye from "../assets/closedeye.png";
+
+import {
+  SectionContainer,
+  FormContainer,
+  Button,
+  ButtonMobile,
+  MobileContainer,
+  FormPMobile,
+  FormP,
+  InfoP,
+  ErrorMessageContainer,
+  ErrorMessage,
+  ShowPassword,
+  EyeButton,
+  EyeSymbol,
+} from "./LoginStyling";
+
 import user from "reducers/user";
 
 const Login = () => {
@@ -16,7 +36,8 @@ const Login = () => {
   const [passwordShown, setPasswordShown] = useState(false);
   const [switchMode, setSwitchMode] = useState("login");
   const [isPanelActive, setIsPanelActive] = useState("");
-  const [validationError, setValidationError] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
+  // const [validationError, setValidationError] = useState(null);
 
   // const [mode, setMode] = useState("login");
 
@@ -89,109 +110,239 @@ const Login = () => {
   };
 
   return (
-    <section>
-      <Hero/>
-      <div className={`container ${isPanelActive ? "right-panel-active" : ""}`}>
-      <h1>Sign in or Sign up</h1>
-      <div className="radio-container">
-        <label htmlFor="register">Register</label>
-        <button
-          type="button"
-          id="register"
-          onClick={onToggleClick}
-          switchMode
-        />
+//     <section>
+//       <Hero/>
+           
+//       {/* <h1>Create account</h1>
+//       <h1>Welcome to our page!</h1>
+//       <div className={`container ${isPanelActive ? "right-panel-active" : ""}`}>
+//       <h1>Sign in or Sign up</h1>
+//       <div className="radio-container">
+//         <label htmlFor="register">Register</label>
+//         <button
+//           type="button"
+//           id="register"
+//           onClick={onToggleClick}
+//           switchMode
+//         >
+//           </button>
   
   
-
-
-
-        <label htmlFor="login">Login</label>
-        <button
-         type="button"
-         onClick={onToggleClick}
-         id="login"
-         Mode
-       >
-         Login
+//         <label htmlFor="login">Login</label>
+//         <button
+//          type="button"
+//          onClick={onToggleClick}
+//          id="login"
+//          Mode
+//        >
+//          Login
         
-        </button>
+//         </button>
 
+//       </div>
+//       <form onSubmit={onFormSubmit}>
+//         <div className="input-field">
+//           <label htmlFor="username">
+//             Username
+//             <span className="required">* </span>
+//           </label>
+//           <input
+//             type="text"
+//             id="username"
+//             value={username}
+//             onChange={(e) => setUsername(e.target.value)}
+//             required 
+//           />
+//         </div>
+//         <div className="input-field">
+//           <label htmlFor="password">
+//             Password
+//             <span className="required">* </span>
+//           </label>
+//           <input
+//             // type="password"
+//             id="password"
+//             type={!passwordShown ? "password" : "text"}
+//             required
+//             value={password}
+//             onChange={(e) => setPassword(e.target.value)}
+//           />
+//         </div>
+//         {validationError !== null && (
+//           <p className="error-message">{validationError}</p>
+//         )}
+//               <div>
+//                 <button type="button" onClick={togglePassword}>
+//                   {/* <span src={passwordShown ? unVisibleEye : visibleEye} /> */}
+//                 </button>
+//               </div>
 
+//         <button type="submit">Submit</button>
+//       </form>
+//       <div className="overlay-container">
+//           <div className="overlay">
+//             <div className="panel panel-left">
+//               <h2>Already have a user?</h2>
+//               <p>Please go to login instead</p>
+//               <button type="button" onClick={onToggleClick} id="login">
+//                 Login
+//               </button>
+//             </div>
+//             <div className="panel panel-right">
+//               <h2>Don't have an account?</h2>
+//               <p>Click on signup to create one</p>
+//               <button type="button" onClick={onToggleClick} id="signup">
+//                 signup
+//               </button>
+//             </div>
+//           </div>
+//           </div>
 
+//       </div>
+//      <Footer/>
 
+//  */}
+
+//     </section>
  
-        
-      <h1>Create account</h1>
-            <h1>Welcome to our page!</h1>
+//   );
+// };
 
-      </div>
-      <form onSubmit={onFormSubmit}>
-        <div className="input-field">
-          <label htmlFor="username">
-            Username
-            <span className="required">* </span>
-          </label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required 
-          />
-        </div>
-        <div className="input-field">
-          <label htmlFor="password">
-            Password
-            <span className="required">* </span>
-          </label>
-          <input
-            // type="password"
-            id="password"
-            type={!passwordShown ? "password" : "text"}
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        {validationError !== null && (
-          <p className="error-message">{validationError}</p>
-        )}
-              <div>
-                <button type="button" onClick={togglePassword}>
-                  {/* <span src={passwordShown ? unVisibleEye : visibleEye} /> */}
-                </button>
-              </div>
 
-        <button type="submit">Submit</button>
-      </form>
-      <div className="overlay-container">
+
+//Testar en sak
+
+<SectionContainer>
+      <div className={`container ${isPanelActive ? "right-panel-active" : ""}`}>
+        <div className="signup-container sign-up-container">
+          <FormContainer onSubmit={onFormSubmit}>
+            <MobileContainer>
+              <FormPMobile>Have an account already?</FormPMobile>
+              <ButtonMobile
+                type="button"
+                onClick={onToggleClick}
+                id="login"
+                Mode
+              >
+                Login
+              </ButtonMobile>
+            </MobileContainer>
+            <h1>Create account</h1>
+            <FormP>Welcome to our page!</FormP>
+            <div className="input-container">
+              <input
+                className="input"
+                id="username"
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+              <label className="user-label" htmlFor="username">
+                Username
+              </label>
+            </div>
+            <div className="input-container">
+              <input
+                className="input"
+                id="password"
+                type={!passwordShown ? "password" : "text"}
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <label className="user-label" htmlFor="password">
+                Password
+              </label>
+              <ShowPassword>
+                <EyeButton type="button" onClick={togglePassword}>
+                  <EyeSymbol src={passwordShown ? closedeye : openeye} />
+                </EyeButton>
+              </ShowPassword>
+            </div>
+            <Button type="submit" Mode>
+              Submit
+            </Button>
+            <ErrorMessageContainer>
+              <ErrorMessage>{errorMessage}</ErrorMessage>
+            </ErrorMessageContainer>
+          </FormContainer>
+        </div>
+        <div className="signup-container login-container">
+          <FormContainer onSubmit={onFormSubmit}>
+            <MobileContainer>
+              <FormPMobile>Don't have an account?</FormPMobile>
+              <ButtonMobile
+                type="button"
+                onClick={onToggleClick}
+                id="signup"
+                Mode
+              >
+                Signup
+              </ButtonMobile>
+            </MobileContainer>
+            <h1>Log in</h1>
+            <FormP>Welcome Back!</FormP>
+            <div className="input-container">
+              <input
+                className="input"
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+              <label className="user-label" htmlFor="username">
+                Username
+              </label>
+            </div>
+            <div className="input-container">
+              <input
+                className="input"
+                type={passwordShown ? "text" : "password"}
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <label className="user-label" htmlFor="password">
+                Password
+              </label>
+              <ShowPassword>
+                <EyeButton type="button" onClick={togglePassword}>
+                  <EyeSymbol src={passwordShown ? closedeye : openeye} />
+                </EyeButton>
+              </ShowPassword>
+            </div>
+            <Button type="submit" Mode>
+              Login
+            </Button>
+            <ErrorMessageContainer>
+              <ErrorMessage>{errorMessage}</ErrorMessage>
+            </ErrorMessageContainer>
+          </FormContainer>
+        </div>
+
+        <div className="overlay-container">
           <div className="overlay">
             <div className="panel panel-left">
               <h2>Already have a user?</h2>
-              <p>Please go to login instead</p>
-              <button type="button" onClick={onToggleClick} id="login">
+              <InfoP>Please go to login instead</InfoP>
+              <Button type="button" onClick={onToggleClick} id="login">
                 Login
-              </button>
+              </Button>
             </div>
             <div className="panel panel-right">
               <h2>Don't have an account?</h2>
-              <p>Click on signup to create one</p>
-              <button type="button" onClick={onToggleClick} id="signup">
+              <InfoP>Click on signup to create one</InfoP>
+              <Button type="button" onClick={onToggleClick} id="signup">
                 signup
-              </button>
+              </Button>
             </div>
           </div>
-          </div>
-
+        </div>
       </div>
-     <Footer/>
-
-
-
-    </section>
- 
+    </SectionContainer>
   );
 };
+
 
 export default Login;
