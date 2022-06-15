@@ -9,6 +9,7 @@ import hat from "../assets/hat.jpg"
 import city from "../assets/city.jpg"
 import dream from "../assets/dream.jpg"
 import nature from "../assets/nature.jpg"
+import {DarkMode} from "./BlackAndWhite";
 
 
 const Contentcontainer = styled.div`
@@ -54,6 +55,7 @@ const Images = styled.img`
 height:200px;
 width:200px; 
 padding:20px;
+box-shadow: 4px 3px 7px 2px #00000040;
 `
 
 const Main = () => {
@@ -78,6 +80,7 @@ const Main = () => {
       <Imagebox>
       <Images src={nature} alt="Hat image" />
       </Imagebox>
+      <DarkMode />
       <Footer/>
     </>
   );

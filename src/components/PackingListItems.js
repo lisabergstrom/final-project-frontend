@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
+import {EmptyMessage} from "./PackinglistStyles";
 
 import { API_GET_LIST, API_DELETE_LIST, API_CHECK_LIST } from "utils/utils"
 
@@ -110,10 +111,10 @@ const PackingListItems = () => {
     )
 
     return (
-      <div>
+      <EmptyMessage>
         <h4>Your packinglist is empty</h4>
         <p>Start adding items for your next adventure</p>
-      </div>
+      </EmptyMessage>
     )
 };
 
