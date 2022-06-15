@@ -21,8 +21,8 @@ const PackingListInput = () => {
         'Authorization': accessToken
       },
       body: JSON.stringify({
-        heading, 
-        message,
+        heading,
+        message
       })
     }
 
