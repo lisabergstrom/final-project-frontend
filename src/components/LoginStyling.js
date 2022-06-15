@@ -20,11 +20,20 @@ export const FormContainer = styled.form`
   text-align: center;
 `;
 
+export const Title = styled.h1`
+font-size: 30px;
+font-family: 'Satisfy', cursive;
+
+@media (min-width: 768px) {
+    font-size: 60px;
+  }
+`
+
 export const Button = styled.button`
   cursor: pointer;
-  background-color: ${(props) => (props.Mode ? "#b2a2d8" : "transparent")};
-  color: #fff;
-  border: 3px solid ${(props) => (props.Mode ? "#b2a2d8" : "#fff")};
+  background-color: ${(props) => (props.Mode ? "#BE7575" : "transparent")};
+  color: #000;
+  border: 3px solid ${(props) => (props.Mode ? "#BE7575" : "#F6AD7B")};
   font-size: 12px;
   letter-spacing: 1px;
   font-weight: bold;
@@ -61,7 +70,7 @@ export const ButtonMobile = styled.button`
   color: #000000;
   font-size: 12px;
   border: none;
-  background-color: #000000;
+  background-color: #BE7575;
   letter-spacing: 1px;
   font-weight: bold;
   text-transform: uppercase;

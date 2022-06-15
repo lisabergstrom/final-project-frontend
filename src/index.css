@@ -167,7 +167,7 @@ input:hover,
 input:valid,
 .input:focus {
   outline: none;
-  border: 2px solid #b2a2d8;
+  border: 2px solid #BE7575;
 }
 
 input:valid ~ label,
@@ -175,7 +175,7 @@ input:valid ~ label,
   transform: translateY(-50%) scale(0.8);
   background-color: #fff;
   padding: 0 0.2em;
-  color: #b2a2d8;
+  color: #BE7575;
 }
 
 /* ----mobile media queries----- */
