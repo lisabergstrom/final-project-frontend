@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
 import { API_GET_NOTES, API_DELETE_NOTES } from "utils/utils"
+import { EmptyCollection, EmptyHeading, EmptyMessage } from "./NotesStyles"
 
 import notes from "../reducers/notes"
 
@@ -83,10 +84,10 @@ const NotesList = () => {
       </div>
     )
   return (
-    <div>
-      <h2>Collect your travel memories</h2>
-      <p>You have no memories saved yet, start creeating your travel memories now so you do not forgett them</p>
-    </div>
+    <EmptyCollection>
+      <EmptyHeading>Collect your travel memories</EmptyHeading>
+      <EmptyMessage>You have no memories saved yet, start creeating your travel memories now so you do not forgett them</EmptyMessage>
+    </EmptyCollection>
   )
 
 
