@@ -80,6 +80,9 @@ const Switch = styled.div`
     transform: translate(0, -50%);
     transition: 0.2s;
   }
+  & after {
+    background-color: #000000;
+  }
 `;
 
 const Input = styled.input`

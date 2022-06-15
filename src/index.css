@@ -13,7 +13,7 @@ body {
 }
 
 
-/* Testar för registrering och login */
+/* Register och login */
 
 .container {
   background-color: #F2EEE5;
@@ -196,5 +196,9 @@ input:valid ~ label,
     transform: translateX(0);
   }
 }
+
+
+/* Theme */
+
 
 

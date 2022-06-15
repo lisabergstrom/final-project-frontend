@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React from "react";
+import React, {useState} from "react";
 import Weather from "./Weather";
 import TimeTicker from "./TickingClock";
 import Footer from "./Footer";
@@ -9,7 +9,11 @@ import hat from "../assets/hat.jpg"
 import city from "../assets/city.jpg"
 import dream from "../assets/dream.jpg"
 import nature from "../assets/nature.jpg"
-import {DarkMode} from "./BlackAndWhite";
+
+
+import '../app.css';
+import { ThemeContext, themes } from './ThemeContext';
+import ToggleDark from './DarkMode';
 
 
 const Contentcontainer = styled.div`
@@ -59,15 +63,26 @@ box-shadow: 4px 3px 7px 2px #00000040;
 `
 
 const Main = () => {
+  const [darkMode, setDarkMode] = React.useState(true);
 
   return (
     <>
        <Header/>
-      {/* <h1>Welcome!</h1> */}
       <Contentcontainer>
       <Weather />
       <TimeTicker />
       </Contentcontainer>
+      <h1 className="text-warning">Dark/Light mode</h1>
+      <ThemeContext.Consumer>
+        {({ changeTheme }) => (
+          <ToggleDark
+            toggleDark={() => {
+              setDarkMode(!darkMode);
+              changeTheme(darkMode ? themes.light : themes.dark);
+            }}
+          />
+        )}
+      </ThemeContext.Consumer>
       <Imagebox>
       <Images src={hat} alt="Hat image" />
       </Imagebox>
@@ -80,7 +95,6 @@ const Main = () => {
       <Imagebox>
       <Images src={nature} alt="Hat image" />
       </Imagebox>
-      <DarkMode />
       <Footer/>
     </>
   );

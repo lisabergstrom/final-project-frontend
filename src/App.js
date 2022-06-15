@@ -18,6 +18,9 @@ import user from "reducers/user";
 import notes from  "reducers/notes"
 import packinglist from "reducers/packinglist"
 
+
+import ThemeContextWrapper from './components/ThemeWrapper';
+
 const reducer = combineReducers({
   user: user.reducer,
   notes: notes.reducer,
@@ -29,7 +32,9 @@ const store = configureStore({ reducer });
 const App = () => {
   return (
     <Provider store={store}>
+  
       <BrowserRouter>
+      <ThemeContextWrapper>
         <Routes>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/" element={<Main />}></Route>
@@ -41,7 +46,9 @@ const App = () => {
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/location" element={<Location />}></Route> 
         </Routes>
+        </ThemeContextWrapper>
       </BrowserRouter>
+    
     </Provider>
   );
 };

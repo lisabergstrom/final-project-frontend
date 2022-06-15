@@ -3,6 +3,12 @@
     height: 100vh;
   }
 
+  /* Theme */
+
+.white-content {
+  background: #e4e4e4;
+}
+
   /* .App {
     text-align: center;
   }

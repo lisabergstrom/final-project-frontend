@@ -34,8 +34,8 @@ const Login = () => {
   const [passwordShown, setPasswordShown] = useState(false);
   const [switchMode, setSwitchMode] = useState("login");
   const [isPanelActive, setIsPanelActive] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-  // const [validationError, setValidationError] = useState(null);
+  // const [errorMessage, setErrorMessage] = useState("");
+  const [validationError, setValidationError] = useState("");
 
   // const [mode, setMode] = useState("login");
 
@@ -47,7 +47,7 @@ const Login = () => {
   };
 
   const onToggleClick = () => {
-    setErrorMessage("");
+    setValidationError("");
     setUsername("");
     setPassword("");
     setPasswordShown(false);
@@ -161,7 +161,7 @@ const Login = () => {
               Submit
             </Button>
             <ErrorMessageContainer>
-              <ErrorMessage>{errorMessage}</ErrorMessage>
+              <ErrorMessage>{validationError}</ErrorMessage>
             </ErrorMessageContainer>
           </FormContainer>
         </div>
@@ -213,7 +213,7 @@ const Login = () => {
               Login
             </Button>
             <ErrorMessageContainer>
-              <ErrorMessage>{errorMessage}</ErrorMessage>
+              <ErrorMessage>{validationError}</ErrorMessage>
             </ErrorMessageContainer>
           </FormContainer>
         </div>
