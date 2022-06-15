@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 
 import { API_GET_NOTES } from "utils/utils"
 
-import { InputContainer, Header, FormContainer, NoteButton, NoteHeading, NoteText, Tags, Tag } from "./NotesStyles"
+import { InputContainer, Header, FormContainer, NoteButton, NoteHeading, NoteText, Select, CustomSelect, CustomArrow, Tag } from "./NotesStyles"
 
 
 
@@ -56,9 +56,10 @@ const NotesInput = () => {
                 onChange={(event) => setMessage(event.target.value)}
                 placeholder="Note here"
             />
-            <Tags 
-            defaultValue={"DEFAULT"}
-            onChange={(event) => setTags(event.target.value)}>
+            <CustomSelect>
+              <Select
+              defaultValue={"DEFAULT"}
+              onChange={(event) => setTags(event.target.value)}>
                 <Tag value="DEFAULT" disabled>Choose tag</Tag>
                 <Tag value="accommodation">Accommodation</Tag>
                 <Tag value="activities">Activities</Tag>
@@ -67,7 +68,9 @@ const NotesInput = () => {
                 <Tag value="memories">Memories</Tag>
                 <Tag value="sightseeing">Sightseeing</Tag>
                 <Tag value="travel">Travel</Tag>  
-            </Tags>
+              </Select>
+              <CustomArrow></CustomArrow>
+            </CustomSelect>
             <NoteButton type="submit">Add note!</NoteButton>
         </FormContainer>
         </InputContainer>

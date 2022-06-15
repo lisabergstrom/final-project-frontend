@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
 import { API_GET_NOTES, API_DELETE_NOTES } from "utils/utils"
-import { EmptyCollection, EmptyHeading, EmptyMessage } from "./NotesStyles"
+import { NotesCollection, NotesHeader, NoteContainer, NoteHeader, NoteMessage, NoteTag, DeleteNote, EmptyCollection, EmptyHeading, EmptyMessage } from "./NotesStyles"
 
 import notes from "../reducers/notes"
 
@@ -65,23 +65,22 @@ const NotesList = () => {
 
   if (noteItems.length > 0)
     return (
-      <div>
-        <h2>My travel memories</h2>
+      <NotesCollection>
+        <NotesHeader >My travel memories</NotesHeader>
         {noteItems &&
           noteItems.map((item) => (
-            <div>
-              <div key={item._id}>
-                <p>{item.heading}</p>
-                <p>{item.message}</p>
-                <button>{item.tags}</button>
+            <NoteContainer key={item._id}>
+              <div >
+                <NoteHeader>{item.heading}</NoteHeader>
+                <NoteMessage>{item.message}</NoteMessage>
+                <NoteTag>{item.tags}</NoteTag>
               </div>
-              <button onClick={() => deleteNote(item._id)}>Delete</button>
-            </div>
+              <DeleteNote onClick={() => deleteNote(item._id)}>
+              <span role='img' aria-label='delete'>🗑</span>
+              </DeleteNote>
+            </NoteContainer>
           ))}
-
-
-
-      </div>
+      </NotesCollection>
     )
   return (
     <EmptyCollection>
