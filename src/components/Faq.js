@@ -48,7 +48,7 @@ const Faq = () => {
   return (
     <div>
        <Navbar />
-      <Header>FAQ Travel Questions</Header>
+      <Header>Travel Questions</Header>
       <div className="accordion">
         {accordionData.map(({ title, content}) => (
           <Accordion title={title} content={content} />
