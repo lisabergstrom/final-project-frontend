@@ -12,9 +12,8 @@ const Contact = () => {
     return (
         <div>
             <Navbar />
+            <ContactHeading>Contact information</ContactHeading>
             <ContactConatiner>
-                <ContactHeading>Contact information</ContactHeading>
-
                 <ContactBox>
                     <Contributors>Lisa Bergström</Contributors>
                     <Description>Frontend developer with background in the travel industry.</Description>

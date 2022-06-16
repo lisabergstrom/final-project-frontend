@@ -49,6 +49,7 @@ export const Select = styled.select`
   border: 0;
   background-color: #FFF;
   width: 80%;
+  font-size: 10px;
 `
 export const CustomSelect = styled.div`
   position: relative;
