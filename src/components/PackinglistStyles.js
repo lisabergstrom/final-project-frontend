@@ -6,7 +6,7 @@ flex-direction: column;
 align-items: center;
 margin: 40px auto 5px;
 padding: 16px;
-min-height: 315px;
+min-height: 420px;
 max-width: 345px;
 background-color: #F2EEE5;
 background-size: 40px 40px;
@@ -23,6 +23,11 @@ box-shadow: 4px 3px 7px 2px #00000040;
 export const Header = styled.h3`
 font-family: 'Satisfy',cursive;
 font-size: 35px;
+margin-bottom:34px;
+`;
+
+export const Content = styled.h3`
+font-size: 16px;
 margin-bottom:34px;
 `;
 
@@ -49,7 +54,7 @@ border:none;
   }
 `;
 
-export const CategoryText = styled.input`
+export const HeaderText = styled.input`
 width: 85px;
 border: 2px solid #F6AD7B;
 background-color: #F2EEE5;
@@ -64,6 +69,7 @@ font-size: 13px;
 padding: 0px 54px 5px 11px;
 margin: 0px 1px 20px 1px;
 border: 2px solid #F6AD7B;
+font-size: 16px;
 `;
 
 export const EmptyMessage = styled.div`
@@ -77,6 +83,56 @@ font-style: oblique;
 @media (min-width: 667px) {
     margin-bottom: 132px;
     margin-top: -105px;
+  }
+
+`;
+
+export const AnswerArea = styled.div`
+Display:flex;
+flex-direction: row;
+align-items: center;
+margin: 40px auto 5px;
+padding: 16px;
+min-height: 160px;
+max-width: 345px;
+background-color: #F2EEE5;
+background-size: 40px 40px;
+border-radius: 20px;
+box-shadow: 4px 3px 7px 2px #00000040;
+
+@media (min-width: 667px) {
+  max-width: 628px;
+}
+
+`;
+
+
+export const AnswerP = styled.p`
+
+`;
+
+export const AnswerHeader = styled.p`
+font-family: 'Satisfy',cursive;
+font-size:20px
+
+`;
+export const AnswerText = styled.div`
+font-family: 'Satisfy',cursive;
+
+`;
+export const DeleteButton = styled.button`
+padding: 3px 20px;
+font-size: 0.9rem;
+cursor: pointer;
+font-family: 'Comic Neue', cursive;
+background-color: #F6AD7B;
+border-radius: 20px;
+margin-left: 90px;
+border:none;
+
+@media (min-width: 667px) {
+      margin-left: 169px;
+    margin-top: 21px;
   }
 
 `;

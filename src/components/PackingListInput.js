@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { API_GET_LIST } from "utils/utils"
 
-import { ListArea, Header, FormArea, AddButton, CategoryText, TextArea } from "./PackinglistStyles";
+import { ListArea, Header, FormArea, AddButton, HeaderText, TextArea, Content } from "./PackinglistStyles";
 
 const PackingListInput = () => {
   
@@ -38,23 +38,20 @@ const PackingListInput = () => {
   return (
     <ListArea>
            <Header>My Packing List</Header>
+           <Content>Check it off your list so you can relax and enjoy that vacy!</Content>
     <FormArea onSubmit={handleSubmit}>
-    <TextArea 
+    <HeaderText
+      type="text" 
+      value={heading}
+      onChange={(event) => setHeading(event.target.value)}
+      placeholder="Header" 
+      />
+<TextArea 
       type="text" 
       value={message}
       onChange={(event) => setMessage(event.target.value)}
       placeholder="Add your item here" 
-      />
-      
-      <CategoryText
-      type="text" 
-      value={heading}
-      onChange={(event) => setHeading(event.target.value)}
-      placeholder="Tag" 
-      />
-
-      
-
+      />      
       <AddButton type="submit">Add</AddButton>
 
     </FormArea>

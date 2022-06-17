@@ -2,6 +2,7 @@ import React from 'react';
 import Accordion from 'components/Accordion';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { Header } from "./FaqStyle";
 
 
 const Faq = () => {
@@ -47,7 +48,7 @@ const Faq = () => {
   return (
     <div>
        <Navbar />
-      <h1>FAQ</h1>
+      <Header>Travel Questions</Header>
       <div className="accordion">
         {accordionData.map(({ title, content}) => (
           <Accordion title={title} content={content} />
