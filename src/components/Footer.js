@@ -14,7 +14,7 @@ const Footer = () => {
                    height: "60px",              
                    }}>
       Created by Emma, Terese and Lisa | Technigo Fontend Bootcamp 2022
-      
+      <Signout/>
       </h4>
      
     </Box>
