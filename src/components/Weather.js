@@ -1,4 +1,7 @@
 /* eslint-disable */
+
+console.log(process.env.REACT_APP_GOOGLE_API_KEY)
+
 import React, { useState } from "react";
 import DisplayWeather from "./DisplayWeather";
 // import Navbar from "./Navbar";
