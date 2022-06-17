@@ -3,6 +3,8 @@ import { useSelector } from "react-redux"
 
 import { API_GET_NOTES } from "utils/utils"
 
+import { InputContainer, Header, FormContainer, NoteButton, NoteHeading, NoteText, Select, Tag } from "./NotesStyles"
+
 
 
 const NotesInput = () => {
@@ -13,7 +15,14 @@ const NotesInput = () => {
     const [message, setMessage] = useState("")
     const [tags, setTags] = useState()
 
+    const validation = () => {
+        if (message.length < 4 ){
+            return <p>Text must be more than 4 characters</p>
+        }
+    }
+
     const handleSubmit = (event) => {
+        validation()
         event.preventDefault()
         const options = {
             
@@ -40,33 +49,35 @@ const NotesInput = () => {
     }
 
     return(
-        <form onSubmit={handleSubmit}>
-            <h3>My Travel Notes</h3>
-            <input
+        <InputContainer>
+          <Header>My Travel Notes</Header>
+          <FormContainer onSubmit={handleSubmit}>
+            <NoteHeading
             type="text"
             value={heading}
             onChange={(event) => setHeading(event.target.value)}
             placeholder="Heading here"/>
-            <textarea
+            <NoteText
                 type= "text"
                 value={message}
                 onChange={(event) => setMessage(event.target.value)}
                 placeholder="Note here"
             />
-            <select 
-            defaultValue={"DEFAULT"}
-            onChange={(event) => setTags(event.target.value)}>
-                <option value="DEFAULT" disabled>Choose tag</option>
-                <option value="accommodation">Accommodation</option>
-                <option value="activities">Activities</option>
-                <option value="city">City</option>
-                <option value="food">Food n Drinks</option>
-                <option value="memories">Memories</option>
-                <option value="sightseeing">Sightseeing</option>
-                <option value="travel">Travel</option>  
-            </select>
-            <button type="submit">Add note!</button>
-        </form>
+              <Select
+              defaultValue={"DEFAULT"}
+              onChange={(event) => setTags(event.target.value)}>
+                <Tag value="DEFAULT" disabled>Choose tag</Tag>
+                <Tag value="accommodation">Accommodation</Tag>
+                <Tag value="activities">Activities</Tag>
+                <Tag value="city">City</Tag>
+                <Tag value="foodndrinks">Food n Drinks</Tag>
+                <Tag value="memories">Memories</Tag>
+                <Tag value="sightseeing">Sightseeing</Tag>
+                <Tag value="travel">Travel</Tag>  
+              </Select>
+            <NoteButton type="submit">Add note!</NoteButton>
+        </FormContainer>
+        </InputContainer>
     )
 }
 
