@@ -3,8 +3,28 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "utils/utils";
-import Hero from "./Hero"
-import Footer from "./Footer";
+
+import openeye from "../assets/openeye.png";
+import closedeye from "../assets/closedeye.png";
+
+import "../login.css";
+
+import {
+  SectionContainer,
+  FormContainer,
+  Title,
+  Button,
+  ButtonMobile,
+  MobileContainer,
+  FormPMobile,
+  FormP,
+  InfoP,
+  ErrorMessageContainer,
+  ErrorMessage,
+  ShowPassword,
+  EyeButton,
+  EyeSymbol,
+} from "./LoginStyling";
 
 import user from "reducers/user";
 
@@ -13,13 +33,34 @@ const Login = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [validationError, setValidationError] = useState(null);
+  const [passwordShown, setPasswordShown] = useState(false);
+  const [switchMode, setSwitchMode] = useState("login");
+  const [isPanelActive, setIsPanelActive] = useState("");
+  // const [errorMessage, setErrorMessage] = useState("");
+  const [validationError, setValidationError] = useState("");
 
-  const [mode, setMode] = useState("login");
+  // const [mode, setMode] = useState("login");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
+
+  const onToggleClick = () => {
+    setValidationError("");
+    setUsername("");
+    setPassword("");
+    setPasswordShown(false);
+    if (switchMode === "login") {
+      setSwitchMode("signup");
+      setIsPanelActive(true);
+    } else {
+      setSwitchMode("login");
+      setIsPanelActive(false);
+    }
+  };
 
   useEffect(() => {
     if (accessToken) {
@@ -36,90 +77,169 @@ const Login = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ username, password }),
-    }
+    };
 
-    fetch(API_URL(mode), options)
+    fetch(API_URL(switchMode), options)
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-            dispatch(user.actions.setAccessToken(data.accessToken));
-          
-            dispatch(user.actions.setUserId(data.userId));
-            
-            dispatch(user.actions.setUserName(data.username));
-            dispatch(user.actions.setError(null));
-            setValidationError(data.message);
+          dispatch(user.actions.setAccessToken(data.accessToken));
 
-            localStorage.setItem(
-              "user",
-              JSON.stringify({
-                userId: data.userId,
-                username: data.username,
-                accessToken: data.accessToken
-              })
-            )
+          dispatch(user.actions.setUserId(data.userId));
+
+          dispatch(user.actions.setUserName(data.username));
+          dispatch(user.actions.setError(null));
+          setValidationError(data.message);
+
+          localStorage.setItem(
+            "user",
+            JSON.stringify({
+              userId: data.userId,
+              username: data.username,
+              accessToken: data.accessToken,
+            })
+          );
         } else {
-            dispatch(user.actions.setError(data.response));
-            dispatch(user.actions.setUserId(null));
-            dispatch(user.actions.setAccessToken(null));
-            dispatch(user.actions.setUserName(null));
-            setValidationError(data.message);
+          dispatch(user.actions.setValidationError(data.response));
+          dispatch(user.actions.setUserId(null));
+          dispatch(user.actions.setAccessToken(null));
+          dispatch(user.actions.setUserName(null));
+          setValidationError(data.message);
         }
       });
   };
 
   return (
-    <section>
-      <Hero/>
-      <h1>Sign in or Sign up</h1>
-      <div className="radio-container">
-        <label htmlFor="register">Register</label>
-        <input
-          type="radio"
-          id="register"
-          checked={mode === "register"}
-          onChange={() => setMode("register")}
-        />
-        <label htmlFor="login">Login</label>
-        <input
-          type="radio"
-          id="login"
-          checked={mode === "login"}
-          onChange={() => setMode("login")}
-        />
+    <SectionContainer>
+      <Title>TRAVEL JUNKIES</Title>
+      <div className={`container ${isPanelActive ? "right-panel-active" : ""}`}>
+        <div className="signup-container sign-up-container">
+          <FormContainer onSubmit={onFormSubmit}>
+            <MobileContainer>
+              <FormPMobile>Have an account already?</FormPMobile>
+              <ButtonMobile
+                type="button"
+                onClick={onToggleClick}
+                id="login"
+                Mode
+              >
+                Login
+              </ButtonMobile>
+            </MobileContainer>
+            <h1>Create account</h1>
+            <FormP>Welcome to our page!</FormP>
+            <div className="input-container">
+              <input
+                className="input"
+                id="username"
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+              <label className="user-label" htmlFor="username">
+                Username
+              </label>
+            </div>
+            <div className="input-container">
+              <input
+                className="input"
+                id="password"
+                type={!passwordShown ? "password" : "text"}
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <label className="user-label" htmlFor="password">
+                Password
+              </label>
+              <ShowPassword>
+                <EyeButton type="button" onClick={togglePassword}>
+                  <EyeSymbol src={passwordShown ? openeye : closedeye} />
+                </EyeButton>
+              </ShowPassword>
+            </div>
+            <Button type="submit" Mode>
+              Submit
+            </Button>
+            <ErrorMessageContainer>
+              <ErrorMessage>{validationError}</ErrorMessage>
+            </ErrorMessageContainer>
+          </FormContainer>
+        </div>
+        <div className="signup-container login-container">
+          <FormContainer onSubmit={onFormSubmit}>
+            <MobileContainer>
+              <FormPMobile>Don't have an account?</FormPMobile>
+              <ButtonMobile
+                type="button"
+                onClick={onToggleClick}
+                id="signup"
+                Mode
+              >
+                Signup
+              </ButtonMobile>
+            </MobileContainer>
+            <h1>Log in</h1>
+            <FormP>Welcome Back!</FormP>
+            <div className="input-container">
+              <input
+                className="input"
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+              <label className="user-label" htmlFor="username">
+                Username
+              </label>
+            </div>
+            <div className="input-container">
+              <input
+                className="input"
+                type={passwordShown ? "text" : "password"}
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <label className="user-label" htmlFor="password">
+                Password
+              </label>
+              <ShowPassword>
+                <EyeButton type="button" onClick={togglePassword}>
+                  <EyeSymbol src={passwordShown ? openeye : closedeye} />
+                </EyeButton>
+              </ShowPassword>
+            </div>
+            <Button type="submit" Mode>
+              Login
+            </Button>
+            <ErrorMessageContainer>
+              <ErrorMessage>{validationError}</ErrorMessage>
+            </ErrorMessageContainer>
+          </FormContainer>
+        </div>
+
+        <div className="overlay-container">
+          <div className="overlay">
+            <div className="panel panel-left">
+              <h2>Already have a user?</h2>
+              <InfoP>Please go to login instead</InfoP>
+              <Button type="button" onClick={onToggleClick} id="login">
+                Login
+              </Button>
+            </div>
+            <div className="panel panel-right">
+              <h2>Don't have an account?</h2>
+              <InfoP>Click on signup to create one</InfoP>
+              <Button type="button" onClick={onToggleClick} id="signup">
+                signup
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
-      <form onSubmit={onFormSubmit}>
-        <div className="input-field">
-          <label htmlFor="username">
-            Username
-            <span className="required">* </span>
-          </label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div className="input-field">
-          <label htmlFor="password">
-            Password
-            <span className="required">* </span>
-          </label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        {validationError !== null && (
-          <p className="error-message">{validationError}</p>
-        )}
-        <button type="submit">Submit</button>
-      </form>
-    </section>
- 
+    </SectionContainer>
   );
 };
 

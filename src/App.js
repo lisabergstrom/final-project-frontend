@@ -18,6 +18,7 @@ import user from "reducers/user";
 import notes from  "reducers/notes"
 import packinglist from "reducers/packinglist"
 
+
 const reducer = combineReducers({
   user: user.reducer,
   notes: notes.reducer,
