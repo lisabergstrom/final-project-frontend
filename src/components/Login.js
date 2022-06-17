@@ -7,6 +7,8 @@ import { API_URL } from "utils/utils";
 import openeye from "../assets/openeye.png";
 import closedeye from "../assets/closedeye.png";
 
+import "../login.css";
+
 import {
   SectionContainer,
   FormContainer,
@@ -98,7 +100,7 @@ const Login = () => {
             })
           );
         } else {
-          dispatch(user.actions.setError(data.response));
+          dispatch(user.actions.setValidationError(data.response));
           dispatch(user.actions.setUserId(null));
           dispatch(user.actions.setAccessToken(null));
           dispatch(user.actions.setUserName(null));

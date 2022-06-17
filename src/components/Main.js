@@ -11,10 +11,6 @@ import dream from "../assets/dream.jpg"
 import nature from "../assets/nature.jpg"
 
 
-import '../app.css';
-import { ThemeContext, themes } from './ThemeContext';
-import ToggleDark from './DarkMode';
-
 
 const Contentcontainer = styled.div`
   width: 100%;
@@ -63,7 +59,6 @@ box-shadow: 4px 3px 7px 2px #00000040;
 `
 
 const Main = () => {
-  const [darkMode, setDarkMode] = React.useState(true);
 
   return (
     <>
@@ -72,17 +67,6 @@ const Main = () => {
       <Weather />
       <TimeTicker />
       </Contentcontainer>
-      <h1 className="text-warning">Dark/Light mode</h1>
-      <ThemeContext.Consumer>
-        {({ changeTheme }) => (
-          <ToggleDark
-            toggleDark={() => {
-              setDarkMode(!darkMode);
-              changeTheme(darkMode ? themes.light : themes.dark);
-            }}
-          />
-        )}
-      </ThemeContext.Consumer>
       <Imagebox>
       <Images src={hat} alt="Hat image" />
       </Imagebox>
