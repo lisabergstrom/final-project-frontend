@@ -7,7 +7,8 @@ import Footer from "./Footer";
 
 const PackingList = () => {
   return (
-    <div>
+   
+   <div>
        <Navbar />
       <PackingListInput />
       <PackingListItems />

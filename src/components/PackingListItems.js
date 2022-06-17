@@ -5,6 +5,8 @@ import {EmptyMessage} from "./PackinglistStyles";
 
 import { API_GET_LIST, API_DELETE_LIST, API_CHECK_LIST } from "utils/utils"
 
+import { AnswerArea, DeleteButton, AnswerP, AnswerText, AnswerHeader } from "./PackinglistStyles";
+
 import packinglist from "../reducers/packinglist"
 
 
@@ -90,22 +92,25 @@ const PackingListItems = () => {
 
   if (listItem.length > 0)
     return (
-      <div>
-        <h4>My packinglist</h4>
-        {listItem &&
+          <div>
+              {listItem &&
           listItem.map((item) => (
-            <div>
-              <div>
-                <p>{item.heading}</p>
-                <p>{item.message}</p>
-              </div>
-              <button onClick={() => deleteItem(item._id)}>Delete</button>
+            
+            <AnswerArea>
+            
+              <AnswerText>
+              
+                <AnswerHeader>{item.heading}</AnswerHeader>
+                <AnswerP>{item.message}</AnswerP>
+              </AnswerText>
               <input
               type="checkbox"
               checked={item.isCompleted}
               onChange={() => onToggleItem(item._id, !item.isCompleted)}
               />
-            </div>
+              <DeleteButton onClick={() => deleteItem(item._id)}>Delete</DeleteButton>
+              
+            </AnswerArea>
           ))}
       </div>
     )

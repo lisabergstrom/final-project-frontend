@@ -7,19 +7,16 @@ import {
 const Footer = () => {
   return (
     <Box>
-      {/* <h1 style={{ color: "white", 
-                   textAlign: "center", 
-                   marginTop: "-50px" }}>
-       TRAVEL JUNKIES
-      </h1> */}
       <h4 style={{ color: "white", 
                    textAlign: "center", 
                    marginTop: "20px",
                    fontSize: "18px",
+                   height: "60px",              
                    }}>
       Created by Emma, Terese and Lisa | Technigo Fontend Bootcamp 2022
+      
       </h4>
-      <Signout/>  
+     
     </Box>
    
   );
