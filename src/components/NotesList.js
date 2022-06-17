@@ -73,8 +73,8 @@ const NotesList = () => {
               <div >
                 <NoteHeader>{item.heading}</NoteHeader>
                 <NoteMessage>{item.message}</NoteMessage>
-                <NoteTag>{item.tags}</NoteTag>
               </div>
+              <NoteTag>{item.tags}</NoteTag>
               <DeleteNote onClick={() => deleteNote(item._id)}>
               <span role='img' aria-label='delete'>🗑</span>
               </DeleteNote>

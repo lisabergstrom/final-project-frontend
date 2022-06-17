@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 
 import { API_GET_NOTES } from "utils/utils"
 
-import { InputContainer, Header, FormContainer, NoteButton, NoteHeading, NoteText, Select, CustomSelect, CustomArrow, Tag } from "./NotesStyles"
+import { InputContainer, Header, FormContainer, NoteButton, NoteHeading, NoteText, Select, Tag } from "./NotesStyles"
 
 
 
@@ -15,7 +15,14 @@ const NotesInput = () => {
     const [message, setMessage] = useState("")
     const [tags, setTags] = useState()
 
+    const validation = () => {
+        if (message.length < 4 ){
+            return <p>Text must be more than 4 characters</p>
+        }
+    }
+
     const handleSubmit = (event) => {
+        validation()
         event.preventDefault()
         const options = {
             
@@ -56,7 +63,6 @@ const NotesInput = () => {
                 onChange={(event) => setMessage(event.target.value)}
                 placeholder="Note here"
             />
-            <CustomSelect>
               <Select
               defaultValue={"DEFAULT"}
               onChange={(event) => setTags(event.target.value)}>
@@ -64,13 +70,11 @@ const NotesInput = () => {
                 <Tag value="accommodation">Accommodation</Tag>
                 <Tag value="activities">Activities</Tag>
                 <Tag value="city">City</Tag>
-                <Tag value="food">Food n Drinks</Tag>
+                <Tag value="foodndrinks">Food n Drinks</Tag>
                 <Tag value="memories">Memories</Tag>
                 <Tag value="sightseeing">Sightseeing</Tag>
                 <Tag value="travel">Travel</Tag>  
               </Select>
-              <CustomArrow></CustomArrow>
-            </CustomSelect>
             <NoteButton type="submit">Add note!</NoteButton>
         </FormContainer>
         </InputContainer>

@@ -16,7 +16,7 @@ const Contact = () => {
             <ContactConatiner>
                 <ContactBox>
                     <Contributors>Lisa Bergström</Contributors>
-                    <Description>Frontend developer with background in the travel industry.</Description>
+                    <Description> A creative frontend developer with background in the travel industry.</Description>
                     <LinkContainer>
                     <ContactImage src={lisa} alt="photo of Lisa" />
                     <ContactLinks aria-label="Lisas portfolio" href="https://github.com/lisabergstrom/project-portfolio" target="_blank"
@@ -28,7 +28,7 @@ const Contact = () => {
 
                 <ContactBox>
                     <Contributors>Emma Berg</Contributors>
-                    <Description>Frontend developer with background in Medical Biology</Description>
+                    <Description>Frontend developer with a background in Medical Biology.</Description>
                     <LinkContainer>
                     <ContactImage src={emma} alt="photo of Emma" />
                     <ContactLinks aria-label="Lisas portfolio" href="https://emmabergsportfolio.netlify.app/" target="_blank"

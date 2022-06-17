@@ -1,5 +1,10 @@
 import styled from "styled-components"
 
+const devices = {
+  tablet: '(min-width: 768px)',
+  desktop: '(min-width: 1024px)'
+}
+
 /***************** NOTES INPUT *********************/
 
 export const InputContainer = styled.div`
@@ -12,6 +17,11 @@ export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
+  @media ${devices.tablet} {
+    width: 50vw;
+  }
 `
 export const Header = styled.h3`
   margin-top: 10px;
@@ -24,6 +34,10 @@ export const FormContainer = styled.form`
   flex-direction: column;
   width: 100%;
   height: 50%;
+
+  @media ${devices.tablet} {
+    width: 400px;
+  }
 `
 
 export const NoteHeading = styled.input `
@@ -43,29 +57,14 @@ export const NoteText = styled.textarea`
   background-color: #F2EEE5;
 `
 export const Select = styled.select`
+  justify-content: center;
   padding: 5px 10px;
   margin: 5px 10px;
   text-align: center; 
-  border: 0;
-  background-color: #FFF;
-  width: 80%;
-  font-size: 10px;
+  border: 2px solid #BE7575;
+  background-color: inherit;
+  border-radius: 20px;
 `
-export const CustomSelect = styled.div`
-  position: relative;
-  
-`
-
-export const CustomArrow = styled.div`
-  background-color: red;
-  position: absolute;
-  top: 8px;
-  right: 50px;
-  display: block;
-  height: 100%;
-  width: 4rem;
-`
-
 export const Tag = styled.option`
   background-color:#F2EEE5; 
   color: #BE7575;
@@ -78,6 +77,8 @@ export const NoteButton = styled.button`
   border: none;
   font-family: 'Comic Neue', cursive;
   border-radius: 20px;
+  width: 40%;
+  align-self: center;
 `
 
 /*************** NOTES LIST ***********************/
@@ -89,20 +90,35 @@ export const NotesCollection = styled.div`
   align-items: center;
   margin: 10px;
   padding: 15px;
+  height: 60vh;
+  overflow-y: scroll;
+
+  @media ${devices.tablet} {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 `
 export const NotesHeader = styled.h2`
   font-family: 'Satisfy',cursive;
   font-size: 25px;
+
+  @media ${devices.tablet} {
+    display: none;
+  }
 `
 export const NoteContainer = styled.div`
   position: relative;
-  overflow-y: scroll;
   border-radius: 10px;
   background-color: #F2EEE5;
   box-shadow: 3px 3px 5px 3px #00000040;
   padding: 8px;
   margin: 10px 5px;
   width: 100%;
+  min-height: 50vh;
+
+  @media ${devices.tablet} {
+    width: 40%;
+  }
 `
 
 export const NoteHeader = styled.p`
@@ -113,16 +129,19 @@ export const NoteHeader = styled.p`
 export const NoteMessage = styled.p`
   font-size: 18px;
   margin: 5px;
+  overflow-y: auto;
+  height: 220px;
 `
 export const NoteTag = styled.button`
   border: none;
-  border-radius: 50px;
-  padding: 8px;
-  margin-top: 10px;
   text-transform: uppercase;
+  font-weight: bold;
+  background-color: inherit;
+  text-decoration: underline;
   font-size: 16px;
-  background-color: #BE7575;
-  color: #F2EEE5;
+  position: absolute;
+  left: 15px;
+  bottom: 5px;
 `
 export const DeleteNote = styled.button`
   position: absolute;
