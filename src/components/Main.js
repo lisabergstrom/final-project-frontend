@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React from "react";
+import React, {useState} from "react";
 import Weather from "./Weather";
 import TimeTicker from "./TickingClock";
 import Footer from "./Footer";
@@ -9,7 +9,7 @@ import hat from "../assets/hat.jpg"
 import city from "../assets/city.jpg"
 import dream from "../assets/dream.jpg"
 import nature from "../assets/nature.jpg"
-import {DarkMode} from "./BlackAndWhite";
+
 
 
 const Contentcontainer = styled.div`
@@ -63,7 +63,6 @@ const Main = () => {
   return (
     <>
        <Header/>
-      {/* <h1>Welcome!</h1> */}
       <Contentcontainer>
       <Weather />
       <TimeTicker />
@@ -80,7 +79,6 @@ const Main = () => {
       <Imagebox>
       <Images src={nature} alt="Hat image" />
       </Imagebox>
-      <DarkMode />
       <Footer/>
     </>
   );

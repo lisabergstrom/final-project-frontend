@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
 
+import { 
+TimeWrapper,
+Timer,
+Label, 
+}
+from "./TickingClockStyling"
+
 const TimeTicker = () => {
   const [timeState, setTimeState] = useState();
 
@@ -12,10 +19,10 @@ const TimeTicker = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Your local time is</h1>
-      <h4>{timeState}</h4>
-    </div>
+    <TimeWrapper>
+      <Label>Your local time is</Label>
+      <Timer>{timeState}</Timer>
+    </TimeWrapper>
   );
 };
 

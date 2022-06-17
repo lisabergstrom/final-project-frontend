@@ -16,7 +16,7 @@ const Footer = () => {
       Created by Emma, Terese and Lisa | Technigo Fontend Bootcamp 2022
       <Signout/>
       </h4>
-     
+     <Signout/>
     </Box>
    
   );
