@@ -96,7 +96,7 @@ const PackingListItems = () => {
               {listItem &&
           listItem.map((item) => (
             
-            <AnswerArea>
+            <AnswerArea key={item._id}>
             
               <AnswerText>
               
