@@ -13,8 +13,9 @@ import {Contentcontainer, Imagebox, Images, Quotes, ImageContainer, TextContent}
 
 const Main = () => {
 
+
   return (
-    <>
+      <>
        <Header/>
       <Contentcontainer>
       <TimeTicker />
@@ -50,7 +51,9 @@ const Main = () => {
       
       </ImageContainer>
       <Footer/>
-    </>
+    
+      </>
+    
   );
 };
 
