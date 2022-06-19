@@ -12,6 +12,9 @@ import nature from "../assets/nature.jpg"
 
 
 
+
+
+
 const Contentcontainer = styled.div`
   width: 100%;
   height: 200px;
@@ -60,13 +63,15 @@ box-shadow: 4px 3px 7px 2px #00000040;
 
 const Main = () => {
 
+
   return (
-    <>
+      <>
        <Header/>
       <Contentcontainer>
       <Weather />
       <TimeTicker />
       </Contentcontainer>
+     
       <Imagebox>
       <Images src={hat} alt="Hat image" />
       </Imagebox>
@@ -80,7 +85,9 @@ const Main = () => {
       <Images src={nature} alt="Hat image" />
       </Imagebox>
       <Footer/>
-    </>
+    
+      </>
+    
   );
 };
 
