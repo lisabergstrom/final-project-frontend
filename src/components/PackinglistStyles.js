@@ -88,9 +88,10 @@ font-style: oblique;
 `;
 
 export const AnswerArea = styled.div`
-Display:flex;
+display:flex;
 flex-direction: row;
 align-items: center;
+position: relative;
 margin: 40px auto 5px;
 padding: 16px;
 min-height: 160px;
@@ -120,19 +121,19 @@ export const AnswerText = styled.div`
 font-family: 'Satisfy',cursive;
 
 `;
+
+export const IsPacked = styled.input`
+position: absolute;
+top: 20px;
+right: 60px;
+width: 20px;
+height: 20px;
+`
 export const DeleteButton = styled.button`
-padding: 3px 20px;
-font-size: 0.9rem;
-cursor: pointer;
-font-family: 'Comic Neue', cursive;
-background-color: #F6AD7B;
-border-radius: 20px;
-margin-left: 90px;
-border:none;
-
-@media (min-width: 667px) {
-      margin-left: 169px;
-    margin-top: 21px;
-  }
-
+position: absolute;
+top: 10px;
+right: 15px;
+border: none;
+background: inherit;
+font-size: 27px;  
 `;

@@ -149,8 +149,7 @@ export const DeleteNote = styled.button`
   right: 15px;
   border: none;
   background: inherit;
-  font-size: 24px;
-  
+  font-size: 24px;  
 `
 
 
