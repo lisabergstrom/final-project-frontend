@@ -8,7 +8,7 @@ const themes = {
   },
   light: {
     backgroundColor:"#F6AD7B",
-    color: "red",
+    color: "black",
   },
 };
 

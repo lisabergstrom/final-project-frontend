@@ -35,15 +35,14 @@ const App = () => {
   const [{ theme, isDark }, toggleTheme] = useContext(ThemeContext);
   return (
     <Provider store={store}>
-                <div
+    <div
       className="app"
       style={{ backgroundColor: theme.backgroundColor, color: theme.color }}
     >
       <div className="text">It's a {isDark ? "Dark" : "Light"} theme</div>
       <button type="button" onClick={toggleTheme}>
         Toggle theme
-      </button>
-   
+      </button>   
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />}></Route>
