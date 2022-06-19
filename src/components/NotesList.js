@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
 import { API_GET_NOTES, API_DELETE_NOTES } from "utils/utils"
+import { NotesCollection, NotesHeader, NoteContainer, NoteHeader, NoteMessage, NoteTag, DeleteNote, EmptyCollection, EmptyHeading, EmptyMessage } from "./NotesStyles"
 
 import notes from "../reducers/notes"
 
@@ -64,29 +65,28 @@ const NotesList = () => {
 
   if (noteItems.length > 0)
     return (
-      <div>
-        <h2>My travel memories</h2>
+      <NotesCollection>
+        <NotesHeader >My travel memories</NotesHeader>
         {noteItems &&
           noteItems.map((item) => (
-            <div>
-              <div key={item._id}>
-                <p>{item.heading}</p>
-                <p>{item.message}</p>
-                <button>{item.tags}</button>
+            <NoteContainer key={item._id}>
+              <div >
+                <NoteHeader>{item.heading}</NoteHeader>
+                <NoteMessage>{item.message}</NoteMessage>
               </div>
-              <button onClick={() => deleteNote(item._id)}>Delete</button>
-            </div>
+              <NoteTag>{item.tags}</NoteTag>
+              <DeleteNote onClick={() => deleteNote(item._id)}>
+              <span role='img' aria-label='delete'>🗑</span>
+              </DeleteNote>
+            </NoteContainer>
           ))}
-
-
-
-      </div>
+      </NotesCollection>
     )
   return (
-    <div>
-      <h2>Collect your travel memories</h2>
-      <p>You have no memories saved yet, start creeating your travel memories now so you do not forgett them</p>
-    </div>
+    <EmptyCollection>
+      <EmptyHeading>Collect your travel memories</EmptyHeading>
+      <EmptyMessage>You have no memories saved yet, start creeating your travel memories now so you do not forgett them</EmptyMessage>
+    </EmptyCollection>
   )
 
 

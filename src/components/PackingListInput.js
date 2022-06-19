@@ -82,7 +82,7 @@ const PackingListInput = () => {
       },
       body: JSON.stringify({
         heading,
-        message,
+        message
       })
     }
     fetch(API_GET_LIST, options)

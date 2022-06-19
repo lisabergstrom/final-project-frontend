@@ -18,17 +18,22 @@ text-align: center;
     width: 443px;
     margin-left: 35%;
   }
+
  `;
+
  export const  AccordionTitle = styled.div`
  background-color: #BE7575
  `;
+
  export const  TitleActive = styled.div`
  background-color: #C2E8CE5;
  `;
+
  export const  AccContent = styled.div`
  background-color: #F2EEE5;
  padding: 10px;
  `;
+
  export const  PlusMinus = styled.div`
  font-size: 20px;
  `;
