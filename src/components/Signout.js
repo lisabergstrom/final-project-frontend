@@ -11,8 +11,20 @@ cursor: pointer;
 font-family: 'Comic Neue',cursive;
 background-color: #C2E8CE;
 border-radius: 20px;
-margin-left: 90px;
 border: none;
+font-size: 10px;
+
+@media (min-width: 768px) {
+  padding: 8px 22px;
+    font-size: 14px;
+    margin-left: 49px;
+}
+
+@media(min-width:1024px) {
+  font-size: 14px;
+  margin-left: 54px;
+  }
+
 `
 const Signout = () => {
     const accessToken = useSelector((store) => store.user.accessToken);
