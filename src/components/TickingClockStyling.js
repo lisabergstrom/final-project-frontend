@@ -22,6 +22,7 @@ export const Timer = styled.h4`
   margin: 0;
   color: #C2E8CE;
   font-family: oxygen mono;
+  text-align: center;
 
   // @media (min-width: 767px) {
   //   font-size: 1.5rem;

@@ -7,7 +7,7 @@ const devices = {
 
 export const Contentcontainer = styled.div`
   width: 100%;
-  height: 200px;
+  // height: 200px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -30,6 +30,8 @@ border: 1px solid black;
 
 export const Clockbox = styled.div`
 width:100%;
+height: 100px;
+margin-bottom: 10px;
 `
 
 
