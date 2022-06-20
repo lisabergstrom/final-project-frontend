@@ -8,7 +8,7 @@ import city from "../assets/city.jpg"
 import dream from "../assets/dream.jpg"
 import nature from "../assets/nature.jpg"
 
-import {Contentcontainer, Imagebox, Images, Quotes, ImageContainer, TextContent} from "./MainStyles"
+import {Contentcontainer, Weatherbox, Clockbox, Imagebox, Images, Quotes, ImageContainer, TextContent} from "./MainStyles"
 import Weather from "./Weather";
 
 
@@ -19,8 +19,12 @@ const Main = () => {
       <>
        <Header/>
       <Contentcontainer>
-        <Weather/>
+        <Clockbox>
       <TimeTicker />
+      </Clockbox>
+      <Weatherbox>
+        <Weather/>
+        </Weatherbox>
       </Contentcontainer>
       <ImageContainer>
       <Imagebox>

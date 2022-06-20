@@ -13,7 +13,26 @@ export const Contentcontainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  // @media ${devices.tablet} {
+  // }
+  
+  @media ${devices.desktop} {
+    flex-direction: row;
+  }
 `
+
+export const Weatherbox = styled.div`
+width:100%;
+border: 1px solid black;
+
+`
+
+export const Clockbox = styled.div`
+width:100%;
+`
+
+
 export const ImageContainer = styled.div`
 display: flex;
 flex-direction: column; 

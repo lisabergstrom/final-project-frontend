@@ -9,9 +9,9 @@ export const TimeWrapper = styled.div`
   border-right: 2px solid #BE7575;
   padding-right: 2rem;
 
-  @media (max-width: 767px) {
-    justify-content: center;
-  }
+  // @media (min-width: 767px) {
+  //   justify-content: center;
+  // }
 }
 `;
 
@@ -23,10 +23,10 @@ export const Timer = styled.h4`
   color: #C2E8CE;
   font-family: oxygen mono;
 
-  @media (max-width: 767px) {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-  }
+  // @media (min-width: 767px) {
+  //   font-size: 1.5rem;
+  //   line-height: 1.5rem;
+  // }
 `;
 
 export const Label = styled.p`
@@ -34,10 +34,10 @@ export const Label = styled.p`
   font-weight: 400;
   color: #F6AD7B;
   margin: 0 0 0.2rem 0;
-  text-align: right;
+  text-align: center;
   font-family: oxygen mono;
 
-  @media (max-width: 767px) {
-    text-align: left;
-  }
+  // @media (min-width: 767px) {
+  //   text-align: left;
+  // }
 `;
