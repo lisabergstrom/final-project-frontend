@@ -14,11 +14,16 @@ text-align: center;
  margin-top: 5px;
  font-weight: bold;
  padding: 10px 10px 0px 10px;
- @media (min-width: 667px) {
+
+  @media (min-width: 768px) {
     width: 443px;
-    margin-left: 35%;
+    margin-left: 23%;
   }
 
+  @media(min-width:1024px) {
+    width:443px;
+    margin-left: 32%;
+  }
  `;
 
  export const  AccordionTitle = styled.div`
