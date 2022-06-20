@@ -6,6 +6,7 @@ margin:30px;
 text-align: center;
  `;
  export const AccordionItem = styled.div`
+ box-shadow: 3px 3px 5px 3px #00000040;
  background-color: #F2EEE5;
  width: 250px;
  display: flex;
