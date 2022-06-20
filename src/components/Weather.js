@@ -19,7 +19,7 @@ const Weather  = () => {
   async function weatherData(e) {
 
     e.preventDefault();
-    if (form.city == "") {
+    if (form.city === "") {
       alert("Add values");
     } else {
           const data = await fetch(
@@ -36,10 +36,10 @@ const Weather  = () => {
     let name = e.target.name;
     let value = e.target.value;
 
-    if (name == "city") {
+    if (name === "city") {
       setForm({ ...form, city: value });
     }
-    if (name == "country") {
+    if (name === "country") {
       setForm({ ...form, country: value });
     }
   };
@@ -67,7 +67,7 @@ const Weather  = () => {
       </form>
 
    
-      {weather.data != undefined ? (
+      {weather.data !== undefined ? (
         <div>
           <DisplayWeather data={weather.data} />
         </div>
