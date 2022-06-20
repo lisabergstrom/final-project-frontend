@@ -166,12 +166,29 @@ export const AnswerText = styled.div`
 font-family: 'Satisfy',cursive;
 `;
 
+export const Label = styled.label`
+display: block;
+position: relative;
+padding-right: 45px;
+margin-top: 15px;
+font-size: 16px;
+user-select: none;
+
+`
 export const IsPacked = styled.input`
 position: absolute;
-top: 20px;
-right: 60px;
-width: 20px;
-height: 20px;
+opacity: 0;
+height: 0;
+width: 0;
+`
+export const Checkmark = styled.span`
+position: absolute;
+top: 0;
+right: 0;
+height: 25px;
+width: 25px;
+background-color: green;
+  
 `
 export const DeleteButton = styled.button`
 position: absolute;

@@ -125,7 +125,7 @@ import { useSelector, useDispatch } from "react-redux"
 import {EmptyMessage} from "./PackinglistStyles";
 import { API_GET_LIST, API_DELETE_LIST, API_CHECK_LIST } from "utils/utils"
 
-import { AnswerArea,IsPacked, DeleteButton, AnswerP, AnswerText, AnswerHeader } from "./PackinglistStyles";
+import { AnswerArea,IsPacked, Label, Checkmark, DeleteButton, AnswerP, AnswerText, AnswerHeader } from "./PackinglistStyles";
 
 import packinglist from "../reducers/packinglist"
 const PackingListItems = () => {
@@ -208,11 +208,14 @@ const PackingListItems = () => {
                 <AnswerHeader>{item.heading}</AnswerHeader>
                 <AnswerP>{item.message}</AnswerP>
               </AnswerText>
+              <Label> Packed
               <IsPacked
               type="checkbox"
               checked={item.isCompleted}
               onChange={() => onToggleItem(item._id, !item.isCompleted)}
               />
+              <Checkmark></Checkmark>
+              </Label>
               <DeleteButton onClick={() => deleteItem(item._id)}><span role='img' aria-label='delete'>🗑</span></DeleteButton>
             </AnswerArea>
           ))}

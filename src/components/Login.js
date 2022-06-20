@@ -54,8 +54,8 @@ const Login = () => {
     setPassword("");
     setPasswordShown(false);
     if (switchMode === "login") {
-      setSwitchMode("register");
-      setIsPanelActive(true);
+      setSwitchMode("register")
+      setIsPanelActive(true)
     } else {
       setSwitchMode("login");
       setIsPanelActive(false);
@@ -78,6 +78,8 @@ const Login = () => {
       },
       body: JSON.stringify({ username, password }),
     };
+
+    console.log(options)
 
     fetch(API_URL(switchMode), options)
       .then((res) => res.json())

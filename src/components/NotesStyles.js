@@ -9,18 +9,21 @@ const devices = {
 
 export const InputContainer = styled.div`
   background-color: #F2EEE5;
-  min-width: 80vw;
-  min-height: 40vh;
   padding:15px;
   margin: 20px;
   box-shadow: 3px 3px 5px 3px #00000040;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
   @media ${devices.tablet} {
-    width: 50vw;
+    max-width: 400px;
+    
+  }
+
+  @media ${devices.desktop} {
+    max-width: 450px;
   }
 `
 export const Header = styled.h3`
@@ -32,10 +35,16 @@ export const Header = styled.h3`
 export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
   height: 50%;
 
   @media ${devices.tablet} {
+    width: 350px;
+    align-self: center;
+  }
+
+  @media ${devices.desktop} {
     width: 400px;
   }
 `
@@ -44,9 +53,11 @@ export const NoteHeading = styled.input `
   padding: 7px 15px;
   margin: 5px;
   border: none;
+  width: 95%;
   font-size: 16px;
   border: 2px solid #BE7575;
   background-color: #F2EEE5;
+  align-self: center;
 `
 
 export const NoteText = styled.textarea`
@@ -96,6 +107,7 @@ export const NotesCollection = styled.div`
   @media ${devices.tablet} {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
   }
 `
 export const NotesHeader = styled.h2`
