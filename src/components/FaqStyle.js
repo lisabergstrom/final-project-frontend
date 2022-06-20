@@ -10,7 +10,7 @@ text-align: center;
  width: 250px;
  display: flex;
  flex-direction: column;
- margin-left: 15%;
+ margin-left: 17%;
  margin-top: 5px;
  font-weight: bold;
  padding: 10px 10px 0px 10px;
@@ -21,9 +21,9 @@ text-align: center;
   }
 
   @media(min-width:1024px) {
-    width:443px;
-    margin-left: 32%;
-  }
+      width:443px;
+      margin-left: 35%;
+    }
  `;
 
  export const  AccordionTitle = styled.div`
