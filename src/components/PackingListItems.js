@@ -1,22 +1,16 @@
-/* eslint-disable */
 import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import {EmptyMessage} from "./PackinglistStyles";
-
 import { API_GET_LIST, API_DELETE_LIST, API_CHECK_LIST } from "utils/utils"
 
-import { AnswerArea, DeleteButton, AnswerP, AnswerText, AnswerHeader } from "./PackinglistStyles";
+import { AnswerArea,IsPacked, DeleteButton, AnswerP, AnswerText, AnswerHeader } from "./PackinglistStyles";
 
 import packinglist from "../reducers/packinglist"
-
-
 const PackingListItems = () => {
   const listItem = useSelector((store) => store.packinglist.items)
   const accessToken = useSelector((store) => store.user.accessToken)
   const userId = useSelector((store) => store.user.userId)
-
   const dispatch = useDispatch()
-
   useEffect(() => {
     const options = {
       method: "GET",
@@ -24,7 +18,6 @@ const PackingListItems = () => {
         "Authorization": accessToken
       }
     }
-
     fetch(API_GET_LIST, options)
       .then((res) => res.json())
       .then((data) => {
@@ -36,9 +29,7 @@ const PackingListItems = () => {
           dispatch(packinglist.actions.setErrors(data))
         }
       })
-
   }, [accessToken, userId, dispatch])
-
  const deleteItem = (listId) => {
   const options = {
     method: "DELETE",
@@ -48,7 +39,6 @@ const PackingListItems = () => {
     },
     body: JSON.stringify({ user: userId, })
   }
-
   fetch(API_DELETE_LIST(listId), options)
   .then((res) => res.json())
   .then((data) => {
@@ -59,9 +49,8 @@ const PackingListItems = () => {
       dispatch(packinglist.actions.setListItem([]))
       dispatch(packinglist.actions.setErrors(data.response))
     }
-  })  
+  })
  }
-
  const onToggleItem = (listId, isCompleted) => {
   const options = {
     method: "PATCH",
@@ -87,36 +76,26 @@ const PackingListItems = () => {
     }
   })
  }
-
- 
-
   if (listItem.length > 0)
     return (
           <div>
               {listItem &&
           listItem.map((item) => (
-            
-            <AnswerArea>
-            
+            <AnswerArea key={item._id}>
               <AnswerText>
-              
                 <AnswerHeader>{item.heading}</AnswerHeader>
                 <AnswerP>{item.message}</AnswerP>
               </AnswerText>
-              <lable>
-              <input
+              <IsPacked
               type="checkbox"
               checked={item.isCompleted}
               onChange={() => onToggleItem(item._id, !item.isCompleted)}
               />
-              </lable>
-              <DeleteButton onClick={() => deleteItem(item._id)}>Delete</DeleteButton>
-              
+              <DeleteButton onClick={() => deleteItem(item._id)}><span role='img' aria-label='delete'>🗑</span></DeleteButton>
             </AnswerArea>
           ))}
       </div>
     )
-
     return (
       <EmptyMessage>
         <h4>Your packinglist is empty</h4>
@@ -124,5 +103,4 @@ const PackingListItems = () => {
       </EmptyMessage>
     )
 };
-
 export default PackingListItems;

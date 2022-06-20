@@ -10,7 +10,6 @@ const CHECK_LIST = (listId) => `${GET_LIST}/${listId}/completed`
 
 
 
-
 export const API_URL = (slug) => `${BASE_URL}/${slug}`
 //To get the notes from get request and post new items
 export const API_GET_NOTES = GET_NOTES

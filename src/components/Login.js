@@ -43,7 +43,7 @@ const Login = () => {
     setPassword("");
     setPasswordShown(false);
     if (switchMode === "login") {
-      setSwitchMode("signup");
+      setSwitchMode("register");
       setIsPanelActive(true);
     } else {
       setSwitchMode("login");
