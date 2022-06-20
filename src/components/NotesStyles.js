@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components/macro"
 
 const devices = {
   tablet: '(min-width: 768px)',

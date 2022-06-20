@@ -6,7 +6,7 @@ margin:30px;
 text-align: center;
  `;
  export const AccordionItem = styled.div`
- background-color: #BE7575;
+ background-color: #F2EEE5;
  width: 250px;
  display: flex;
  flex-direction: column;
@@ -22,11 +22,11 @@ text-align: center;
  `;
 
  export const  AccordionTitle = styled.div`
- background-color: #BE7575
+ background-color: #F2EEE5
  `;
 
  export const  TitleActive = styled.div`
- background-color: #C2E8CE5;
+ background-color: #F2EEE5;
  `;
 
  export const  AccContent = styled.div`
