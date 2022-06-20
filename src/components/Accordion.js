@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+
 import { AccordionItem, AccordionTitle, TitleActive, AccContent, PlusMinus } from "./FaqStyle";
+
 const Accordion = ({ title, content }) => {
   const [isActive, setIsActive] = useState(false);
   return (

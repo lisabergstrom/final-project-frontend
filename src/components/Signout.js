@@ -1,11 +1,10 @@
-
-
 import React, {useEffect} from "react";
 import user from "reducers/user";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import styled from "styled-components/macro";
+
 export const SignOut = styled.button`
 padding: 3px 16px;
 cursor: pointer;

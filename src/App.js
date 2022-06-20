@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 
-import { useContext } from "react";
-import { ThemeContext } from "./components/Theme";
+// import { useContext } from "react";
+// import { ThemeContext } from "./components/Theme";
 
 import Login from "components/Login";
 import Main from "components/Main";
@@ -32,17 +32,17 @@ const store = configureStore({ reducer });
 
 const App = () => {
   
-  const [{ theme, isDark }, toggleTheme] = useContext(ThemeContext);
+  // const [{ theme, isDark }, toggleTheme] = useContext(ThemeContext);
   return (
     <Provider store={store}>
-    <div
+    {/* <div
       className="app"
       style={{ backgroundColor: theme.backgroundColor, color: theme.color }}
     >
       <div className="text">It's a {isDark ? "Dark" : "Light"} theme</div>
       <button type="button" onClick={toggleTheme}>
         Toggle theme
-      </button>   
+      </button>    */}
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />}></Route>
@@ -56,7 +56,7 @@ const App = () => {
           <Route path="/location" element={<Location />}></Route> 
         </Routes>
       </BrowserRouter>
-      </div>
+      {/* </div> */}
     </Provider>
   );
 };
