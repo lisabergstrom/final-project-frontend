@@ -75,10 +75,18 @@ export const Select = styled.select`
   border: 2px solid #BE7575;
   background-color: inherit;
   border-radius: 20px;
+
+  @media ${devices.desktop} {
+    cursor: pointer;
+  }
 `
 export const Tag = styled.option`
   background-color:#F2EEE5; 
   color: #BE7575;
+
+  @media ${devices.desktop} {
+    cursor: pointer;
+  }
 `
 
 export const NoteButton = styled.button`
@@ -126,7 +134,7 @@ export const NoteContainer = styled.div`
   padding: 8px;
   margin: 10px 5px;
   width: 100%;
-  min-height: 50vh;
+  min-height: 40vh;
 
   @media ${devices.tablet} {
     width: 40%;
@@ -143,6 +151,12 @@ export const NoteMessage = styled.p`
   margin: 5px;
   overflow-y: auto;
   height: 220px;
+`
+
+export const TagContainer = styled.div`
+ margin-top: 10px;
+ padding: 5px;
+ background-color: blue;
 `
 export const NoteTag = styled.button`
   border: none;
@@ -161,7 +175,7 @@ export const DeleteNote = styled.button`
   right: 15px;
   border: none;
   background: inherit;
-  font-size: 24px;  
+  font-size: 27px;  
 `
 
 

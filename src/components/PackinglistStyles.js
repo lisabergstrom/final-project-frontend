@@ -66,13 +66,14 @@
 // `;
 
 import styled from 'styled-components';
+
 export const ListArea = styled.section`
 Display:flex;
 flex-direction: column;
 align-items: center;
+justify-content: center;
 margin: 40px auto 5px;
 padding: 16px;
-min-height: 420px;
 max-width: 345px;
 background-color: #F2EEE5;
 background-size: 40px 40px;
@@ -128,16 +129,13 @@ border: 2px solid #F6AD7B;
 font-size: 16px;
 `;
 export const EmptyMessage = styled.div`
+font-style: oblique;
 display: flex;
 flex-direction: column;
+justify-content: center;
 align-items: center;
-margin-bottom: 141px;
-margin-top: -105px;
-font-style: oblique;
-@media (min-width: 667px) {
-    margin-bottom: 132px;
-    margin-top: -105px;
-  }
+margin: 50px 30px;
+
 `;
 export const AnswerArea = styled.div`
 display:flex;
