@@ -103,11 +103,13 @@ const PackingListItems = () => {
                 <AnswerHeader>{item.heading}</AnswerHeader>
                 <AnswerP>{item.message}</AnswerP>
               </AnswerText>
+              <lable>
               <input
               type="checkbox"
               checked={item.isCompleted}
               onChange={() => onToggleItem(item._id, !item.isCompleted)}
               />
+              </lable>
               <DeleteButton onClick={() => deleteItem(item._id)}>Delete</DeleteButton>
               
             </AnswerArea>

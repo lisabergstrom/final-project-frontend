@@ -5,6 +5,8 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 
+console.log(process.env)
+
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

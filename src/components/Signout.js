@@ -3,7 +3,19 @@ import user from "reducers/user";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import styled from "styled-components/macro";
 
+
+export const SignOut = styled.button`
+padding: 3px 16px;
+cursor: pointer;
+font-family: 'Comic Neue',cursive;
+background-color: #C2E8CE;
+border-radius: 20px;
+margin-left: 90px;
+border: none;
+
+`
 
 const Signout = () => {
     const accessToken = useSelector((store) => store.user.accessToken);
@@ -17,7 +29,7 @@ const Signout = () => {
     }, [accessToken, navigate]);
   
     return (
-        <button
+        <SignOut
         type="button"
         onClick={() => {
           navigate("/login");
@@ -26,7 +38,7 @@ const Signout = () => {
         }}
       >
         Sign out
-      </button>
+      </SignOut>
     )
 }
 

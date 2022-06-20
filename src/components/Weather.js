@@ -1,14 +1,16 @@
 /* eslint-disable */
 
-console.log(process.env.REACT_APP_GOOGLE_API_KEY)
-
 import React, { useState } from "react";
 import DisplayWeather from "./DisplayWeather";
-// import Navbar from "./Navbar";
+
+const dotenv = require("dotenv");
+
+dotenv.config({ path: ".env" });
+
 
 const Weather  = () => {
  
-  const APIKEY="1db7a0f6af224b79d65f2ccf40f9e740";
+ const APIKEY = process.env.REACT_APP_API_KEY
 
    const [weather, setWeather] = useState([]);
    const [form, setForm] = useState({
