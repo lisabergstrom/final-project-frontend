@@ -7,8 +7,7 @@ const devices = {
 
 export const Contentcontainer = styled.div`
   width: 100%;
-  // height: 200px;
-  background-color: white;
+  background-color: #F2EEE5;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,17 +21,18 @@ export const Contentcontainer = styled.div`
   }
 `
 
-export const Weatherbox = styled.div`
-width:100%;
-border: 1px solid black;
-
-`
 
 export const Clockbox = styled.div`
-width:100%;
-height: 100px;
+height: 200px;
 margin-bottom: 10px;
-`
+
+// // @media ${devices.tablet} {
+//   // }
+  
+//   @media ${devices.desktop} {
+//     flex-direction: row;
+//   }
+// `
 
 
 export const ImageContainer = styled.div`

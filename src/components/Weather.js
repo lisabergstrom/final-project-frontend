@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import DisplayWeather from "./DisplayWeather";
 
+import { 
+  WeatherWrapper,
+  WeatherForm,
+  WeatherTitle,
+  SubmitButton,
+  Input,
+ } from "./WeatherStyle";
+
 const dotenv = require("dotenv");
 
 dotenv.config({ path: ".env" });
@@ -44,27 +52,27 @@ const Weather  = () => {
     }
   };
   return (
-    <div className="weather">
-      <span className="title">check the weather at your destination</span>
+    <WeatherWrapper>
+      <WeatherTitle>Check the weather at your destination</WeatherTitle>
       <br />
-      <form>
-        <input
+      <WeatherForm>
+        <Input
           type="text"
           placeholder="city"
           name="city"
           onChange={(e) => handleChange(e)}
         />
         &nbsp; &nbsp; &nbsp;&nbsp;
-        <input
+        <Input
           type="text"
           placeholder="Country"
           name="country"
           onChange={(e) => handleChange(e)}
         />
-        <button className="getweather" onClick={(e) => weatherData(e)}>
+        <SubmitButton onClick={(e) => weatherData(e)}>
           Submit
-        </button>
-      </form>
+        </SubmitButton>
+      </WeatherForm>
 
    
       {weather.data !== undefined ? (
@@ -72,7 +80,7 @@ const Weather  = () => {
           <DisplayWeather data={weather.data} />
         </div>
       ) : null}
-    </div>
+    </WeatherWrapper>
   );
 }
 

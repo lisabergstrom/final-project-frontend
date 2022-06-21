@@ -1,18 +1,27 @@
 import styled from "styled-components/macro";
 
+const devices = {
+  tablet: '(min-width: 768px)',
+  desktop: '(min-width: 1024px)'
+}
+
 
 export const TimeWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 56px;
-  border-right: 2px solid #BE7575;
-  padding-right: 2rem;
+  margin-top: 10px;
 
-  // @media (min-width: 767px) {
-  //   justify-content: center;
+  
+  //  @media ${devices.tablet} {
   // }
-}
+  
+ @media ${devices.desktop} {
+  margin: 40px;
+  height: 150px;
+  }
+
 `;
 
 export const Timer = styled.h4`
@@ -23,11 +32,11 @@ export const Timer = styled.h4`
   color: #C2E8CE;
   font-family: oxygen mono;
   text-align: center;
+  border: 7px;
+  border-style: dotted; 
+  border-radius: 100px;
+  padding: 40px;
 
-  // @media (min-width: 767px) {
-  //   font-size: 1.5rem;
-  //   line-height: 1.5rem;
-  // }
 `;
 
 export const Label = styled.p`
@@ -38,7 +47,8 @@ export const Label = styled.p`
   text-align: center;
   font-family: oxygen mono;
 
-  // @media (min-width: 767px) {
-  //   text-align: left;
-  // }
+  @media ${devices.desktop} {
+  font-size: 55px;
+    }
+
 `;
