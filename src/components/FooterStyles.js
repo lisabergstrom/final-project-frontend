@@ -18,7 +18,7 @@ position: fixed;
 left: 0;
 bottom: 0;
 width: 100%;
-background: black;
+background: #212529;
 margin:0;
 padding: 8px;
 display:flex;
