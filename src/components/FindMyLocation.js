@@ -27,7 +27,7 @@
 
 
  return (
-    <div className="App">
+    <div>
       <button onClick={getLocation}>Where on Earth am I?</button>
      <h1>Coordinates</h1>
       <p>{status}</p>
@@ -41,5 +41,3 @@
 export default FindMyLocation;
 
 export {getLocation};
-
-// // Heading: Where on Earth am I?

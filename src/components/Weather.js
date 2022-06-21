@@ -31,7 +31,7 @@ const Weather  = () => {
       alert("Add values");
     } else {
           const data = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&APPID=${APIKEY}`
+        `http://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&APPID=${APIKEY}`
         )
         .then((res) => res.json())
         .then((data) => data);
@@ -70,11 +70,10 @@ const Weather  = () => {
           onChange={(e) => handleChange(e)}
         />
         <SubmitButton onClick={(e) => weatherData(e)}>
-          Submit
+          Check
         </SubmitButton>
       </WeatherForm>
 
-   
       {weather.data !== undefined ? (
         <div>
           <DisplayWeather data={weather.data} />

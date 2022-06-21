@@ -6,7 +6,16 @@ import emma from "../assets/emma.jpg"
 import terese from "../assets/terese.jpg"
 
 
-import { ContactConatiner, ContactHeading, ContactBox, ContactImage, Contributors,LinkContainer, Description, ContactLinks} from "./ContactStyles"
+import { 
+    ContactConatiner, 
+    ContactHeading, 
+    ContactBox, 
+    ContactImage, 
+    Contributors,
+    LinkContainer, 
+    Description, 
+    ContactLinks
+} from "./ContactStyles"
 
 const Contact = () => {
     return (
@@ -25,19 +34,6 @@ const Contact = () => {
                         title="Lisa Bergstrom linkedin">LinkedIn</ContactLinks>
                     </LinkContainer>
                 </ContactBox>
-
-                <ContactBox>
-                    <Contributors>Emma Berg</Contributors>
-                    <Description>Frontend developer with a background in Medical Biology.</Description>
-                    <LinkContainer>
-                    <ContactImage src={emma} alt="photo of Emma" />
-                    <ContactLinks aria-label="Lisas portfolio" href="https://emmabergsportfolio.netlify.app/" target="_blank"
-                        title="Emma Berg portfolio">Emmas portfolio</ContactLinks>
-                    <ContactLinks aria-label="Lisas linkedin" href="https://www.linkedin.com/in/emma-berg-196769139/" target="_blank"
-                        title="Emma Berg linkedin">LinkedIn</ContactLinks>
-                    </LinkContainer>
-                </ContactBox>
-
                 <ContactBox>
                     <Contributors>Terese Claesson</Contributors>
                     <Description>Frontend developer and educated business developer with background in medical science </Description>
@@ -47,6 +43,17 @@ const Contact = () => {
                         title="Terese Claessons portfolio">Tereses portfolio</ContactLinks>
                     <ContactLinks aria-label="Lisas linkedin" href="https://www.linkedin.com/in/terese-claesson-1b0385181/" target="_blank"
                         title="Terese Claessons linkedin">LinkedIn</ContactLinks>
+                    </LinkContainer>
+                </ContactBox>
+                <ContactBox>
+                    <Contributors>Emma Berg</Contributors>
+                    <Description>Frontend developer with a background in Medical Biology.</Description>
+                    <LinkContainer>
+                    <ContactImage src={emma} alt="photo of Emma" />
+                    <ContactLinks aria-label="Lisas portfolio" href="https://emmabergsportfolio.netlify.app/" target="_blank"
+                        title="Emma Berg portfolio">Emmas portfolio</ContactLinks>
+                    <ContactLinks aria-label="Lisas linkedin" href="https://www.linkedin.com/in/emma-berg-196769139/" target="_blank"
+                        title="Emma Berg linkedin">LinkedIn</ContactLinks>
                     </LinkContainer>
                 </ContactBox>
             </ContactConatiner>

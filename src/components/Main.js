@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, {useState} from "react";
+import React from "react";
 import TimeTicker from "./TickingClock";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -8,20 +8,23 @@ import city from "../assets/city.jpg"
 import dream from "../assets/dream.jpg"
 import nature from "../assets/nature.jpg"
 
-import {Contentcontainer, Imagebox, Images, Quotes, ImageContainer, TextContent} from "./MainStyles"
+import {
+  Contentcontainer, 
+  Imagebox, 
+  Images, 
+  Quotes, 
+  ImageContainer, 
+  TextContent
+} from "./MainStyles"
 import Weather from "./Weather";
 
 
 const Main = () => {
-
-
   return (
       <>
        <Header/>
       <Contentcontainer>
-        {/* <Clockbox> */}
       <TimeTicker />
-      {/* </Clockbox> */}
         <Weather/>
       </Contentcontainer>
       <ImageContainer>
@@ -52,12 +55,9 @@ const Main = () => {
       <Quotes>A journey of a thousand miles begins with a single step” - Lao Tzu</Quotes>
       </TextContent>
       </Imagebox>
-      
       </ImageContainer>
       <Footer/>
-    
       </>
-    
   );
 };
 

@@ -1,5 +1,5 @@
-/* eslint-disable */
 import { createSlice } from "@reduxjs/toolkit";
+
 
 const packinglist = createSlice({
   name: "packinglist",
@@ -27,7 +27,5 @@ const packinglist = createSlice({
     }
   }
 })
-
-//add isCompleted to be able to check the packinglist
 
 export default packinglist

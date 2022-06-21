@@ -22,20 +22,6 @@ export const Contentcontainer = styled.div`
   }
 `
 
-
-// export const Clockbox = styled.div`
-// height: 200px;
-// margin-bottom: 10px;
-
-// @media ${devices.tablet} {
-//   }
-  
-//   @media ${devices.desktop} {
-//     flex-direction: row;
-//   }
-// `
-
-
 export const ImageContainer = styled.div`
 display: flex;
 flex-direction: column; 

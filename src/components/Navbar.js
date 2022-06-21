@@ -1,6 +1,7 @@
 import React from "react";
 import * as ReactBootStrap from "react-bootstrap"
 
+
 const Navbar = () => {
     return (
       <ReactBootStrap.Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -16,7 +17,6 @@ const Navbar = () => {
           <ReactBootStrap.Nav.Link href="/faq">FAQ</ReactBootStrap.Nav.Link>
           <ReactBootStrap.Nav.Link href="/contact">Contact</ReactBootStrap.Nav.Link>
           </ReactBootStrap.Nav>
- 
       </ReactBootStrap.Navbar.Collapse>
       </ReactBootStrap.Container>
     </ReactBootStrap.Navbar>

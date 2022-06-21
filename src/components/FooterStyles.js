@@ -1,5 +1,10 @@
 import styled from 'styled-components/macro';
 
+const devices = {
+  tablet: '(min-width: 768px)',
+  desktop: '(min-width: 1024px)'
+}
+
 export const Box = styled.div`
 height: 50px;
 `;
@@ -19,9 +24,9 @@ padding: 8px;
 display:flex;
 justify-content: center;
 
-@media (min-width: 768px) {
-   font-size: 18px;
-  }
+@media ${devices.tablet} {
+  font-size: 18px;
+}
 `
 
 

@@ -1,11 +1,20 @@
 import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import {EmptyMessage} from "./PackinglistStyles";
 import { API_GET_LIST, API_DELETE_LIST, API_CHECK_LIST } from "utils/utils"
 
-import { AnswerArea, IsPacked, DeleteButton, AnswerP, AnswerText, AnswerHeader } from "./PackinglistStyles";
+import { 
+  AnswerArea, 
+  IsPacked, 
+  DeleteButton, 
+  AnswerP, 
+  AnswerText, 
+  AnswerHeader,
+  EmptyMessage
+ } from "./PackinglistStyles";
 
 import packinglist from "../reducers/packinglist"
+
+
 const PackingListItems = () => {
   const listItem = useSelector((store) => store.packinglist.items)
   const accessToken = useSelector((store) => store.user.accessToken)
@@ -76,6 +85,7 @@ const PackingListItems = () => {
     }
   })
  }
+
   if (listItem.length > 0)
     return (
           <div>
@@ -96,6 +106,7 @@ const PackingListItems = () => {
           ))}
       </div>
     )
+
     return (
       <EmptyMessage>
         <h4>Your packinglist is empty</h4>
@@ -103,4 +114,5 @@ const PackingListItems = () => {
       </EmptyMessage>
     )
 };
+
 export default PackingListItems;

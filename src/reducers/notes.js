@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-//The notes slice is in controll for updating the notes-state
-//Reducers respond to actions and takes the current state and update the state based on the currebt action payload
+
 const notes = createSlice({
     name: "notes",
     initialState: {

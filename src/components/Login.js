@@ -5,6 +5,7 @@ import { API_URL } from "utils/utils";
 import openeye from "../assets/openeye.png";
 import closedeye from "../assets/closedeye.png";
 import "../login.css";
+
 import {
   SectionContainer,
   FormContainer,
@@ -20,7 +21,9 @@ import {
   ShowPassword,
   EyeButton,
   EyeSymbol,
-} from "./LoginStyling";
+} from "./LoginStyles";
+
+
 import user from "reducers/user";
 const Login = () => {
   const accessToken = useSelector((store) => store.user.accessToken);
@@ -29,9 +32,8 @@ const Login = () => {
   const [passwordShown, setPasswordShown] = useState(false);
   const [switchMode, setSwitchMode] = useState("login");
   const [isPanelActive, setIsPanelActive] = useState("");
-  // const [errorMessage, setErrorMessage] = useState("");
   const [validationError, setValidationError] = useState("");
-  // const [mode, setMode] = useState("login");
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const togglePassword = () => {
@@ -64,12 +66,6 @@ const Login = () => {
       },
       body: JSON.stringify({ username, password }),
     };
-<<<<<<< HEAD
-
-    console.log(options)
-
-=======
->>>>>>> 045cb68f1a997c1306421e2ff85c2cb821dab02f
     fetch(API_URL(switchMode), options)
       .then((res) => res.json())
       .then((data) => {
@@ -96,6 +92,7 @@ const Login = () => {
         }
       });
   };
+  
   return (
     <SectionContainer>
       <Title>TRAVEL JUNKIES</Title>
