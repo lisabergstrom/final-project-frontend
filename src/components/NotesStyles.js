@@ -142,6 +142,10 @@ export const NoteContainer = styled.div`
   width: 100%;
   min-height: 40vh;
 
+  @media ${devices.tablet} {
+    width: 300px;
+  }
+
   
 `
 

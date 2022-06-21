@@ -113,7 +113,7 @@ top: 10px;
 right: 15px;
 border: none;
 background: inherit;
-font-size: 27px;  
+font-size: 20px; 
 `;
 
 
