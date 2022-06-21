@@ -1,7 +1,6 @@
 import React from 'react';
 
-import styled from 'styled-components/macro'
-import img from '../assets/hero.jpg';
+import { Content, Text } from './HeroStyles';
 
 const Content = styled.img`
   border: 1px solid #000;
@@ -57,7 +56,6 @@ const Hero = () => {
         <Text>Travel Junkies</Text>
         </>
     )
-
 }
 
 export default Hero

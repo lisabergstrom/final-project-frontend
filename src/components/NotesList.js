@@ -2,14 +2,25 @@ import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
 import { API_GET_NOTES, API_DELETE_NOTES } from "utils/utils"
-import { NotesCollection, NotesHeader, NoteContainer, NoteHeader, NoteMessage, NoteTag, DeleteNote, EmptyCollection, EmptyHeading, EmptyMessage } from "./NotesStyles"
+
+import { 
+  NotesCollection, 
+  NotesHeader, 
+  NoteContainer, 
+  NoteHeader, 
+  NoteMessage,
+  TagContainer, 
+  NoteTag, 
+  DeleteNote, 
+  EmptyCollection, 
+  EmptyHeading, 
+  EmptyMessage 
+} from "./NotesStyles"
 
 import notes from "../reducers/notes"
 
 
-
 const NotesList = () => {
-  //Initial state
   const noteItems = useSelector((store) => store.notes.items)
 
   const accessToken = useSelector((store) => store.user.accessToken)
@@ -74,7 +85,9 @@ const NotesList = () => {
                 <NoteHeader>{item.heading}</NoteHeader>
                 <NoteMessage>{item.message}</NoteMessage>
               </div>
+              <TagContainer>
               <NoteTag>{item.tags}</NoteTag>
+              </TagContainer>
               <DeleteNote onClick={() => deleteNote(item._id)}>
               <span role='img' aria-label='delete'>🗑</span>
               </DeleteNote>
@@ -88,8 +101,6 @@ const NotesList = () => {
       <EmptyMessage>You have no memories saved yet, start creeating your travel memories now so you do not forgett them</EmptyMessage>
     </EmptyCollection>
   )
-
-
 }
 
 export default NotesList

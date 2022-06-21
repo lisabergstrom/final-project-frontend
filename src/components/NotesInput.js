@@ -3,8 +3,16 @@ import { useSelector } from "react-redux"
 
 import { API_GET_NOTES } from "utils/utils"
 
-import { InputContainer, Header, FormContainer, NoteButton, NoteHeading, NoteText, Select, Tag } from "./NotesStyles"
-
+import { 
+    InputContainer, 
+    Header, 
+    FormContainer, 
+    NoteButton, 
+    NoteHeading, 
+    NoteText, 
+    Select, 
+    Tag 
+} from "./NotesStyles"
 
 
 const NotesInput = () => {

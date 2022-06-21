@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
 
+
 export const SectionContainer = styled.section`
   display: flex;
   justify-content: center;
@@ -74,6 +75,7 @@ export const ButtonMobile = styled.button`
   font-weight: bold;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
+  margin-left: 20px;
   &:active {
     transform: scale(0.95);
   }

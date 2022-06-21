@@ -1,27 +1,33 @@
 import styled from 'styled-components/macro';
+
+const devices = {
+  tablet: '(min-width: 768px)',
+  desktop: '(min-width: 1024px)'
+}
+
 export const Header = styled.h3`
-font-family: 'Satisfy',cursive;
-font-size: 35px;
-margin:30px;
-text-align: center;
+ font-family: 'Satisfy',cursive;
+ font-size: 35px;
+ margin:30px;
+ text-align: center;
  `;
  export const AccordionItem = styled.div`
- box-shadow: 3px 3px 5px 3px #00000040;
- background-color: #F2EEE5;
- width: 250px;
- display: flex;
- flex-direction: column;
- margin-left: 17%;
- margin-top: 5px;
- font-weight: bold;
- padding: 10px 10px 0px 10px;
+  box-shadow: 3px 3px 5px 3px #00000040;
+  background-color: #F2EEE5;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 17%;
+  margin-top: 5px;
+  font-weight: bold;
+  padding: 10px 10px 0px 10px;
 
-  @media (min-width: 768px) {
+  @media ${devices.tablet}  {
     width: 443px;
     margin-left: 23%;
   }
 
-  @media(min-width:1024px) {
+  @media${devices.desktop}  {
       width:443px;
       margin-left: 35%;
     }

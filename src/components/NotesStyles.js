@@ -5,22 +5,31 @@ const devices = {
   desktop: '(min-width: 1024px)'
 }
 
+export const NoteBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
 /***************** NOTES INPUT *********************/
 
 export const InputContainer = styled.div`
   background-color: #F2EEE5;
-  min-width: 80vw;
-  min-height: 40vh;
   padding:15px;
-  margin: 20px;
+  margin: 10px;
   box-shadow: 3px 3px 5px 3px #00000040;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  width: 80%;
 
   @media ${devices.tablet} {
-    width: 50vw;
+    max-width: 400px; 
+  }
+
+  @media ${devices.desktop} {
+    max-width: 450px;
   }
 `
 export const Header = styled.h3`
@@ -32,10 +41,16 @@ export const Header = styled.h3`
 export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
   height: 50%;
 
   @media ${devices.tablet} {
+    width: 350px;
+    align-self: center;
+  }
+
+  @media ${devices.desktop} {
     width: 400px;
   }
 `
@@ -44,9 +59,11 @@ export const NoteHeading = styled.input `
   padding: 7px 15px;
   margin: 5px;
   border: none;
+  width: 95%;
   font-size: 16px;
   border: 2px solid #BE7575;
   background-color: #F2EEE5;
+  align-self: center;
 `
 
 export const NoteText = styled.textarea`
@@ -64,10 +81,18 @@ export const Select = styled.select`
   border: 2px solid #BE7575;
   background-color: inherit;
   border-radius: 20px;
+
+  @media ${devices.desktop} {
+    cursor: pointer;
+  }
 `
 export const Tag = styled.option`
   background-color:#F2EEE5; 
   color: #BE7575;
+
+  @media ${devices.desktop} {
+    cursor: pointer;
+  }
 `
 
 export const NoteButton = styled.button`
@@ -96,6 +121,7 @@ export const NotesCollection = styled.div`
   @media ${devices.tablet} {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
   }
 `
 export const NotesHeader = styled.h2`
@@ -114,7 +140,7 @@ export const NoteContainer = styled.div`
   padding: 8px;
   margin: 10px 5px;
   width: 100%;
-  min-height: 50vh;
+  min-height: 40vh;
 
   @media ${devices.tablet} {
     width: 40%;
@@ -130,7 +156,12 @@ export const NoteMessage = styled.p`
   font-size: 18px;
   margin: 5px;
   overflow-y: auto;
-  height: 220px;
+  height: 250px;
+`
+
+export const TagContainer = styled.div`
+ margin-top: 15px;
+ padding: 5px;
 `
 export const NoteTag = styled.button`
   border: none;
@@ -149,7 +180,7 @@ export const DeleteNote = styled.button`
   right: 15px;
   border: none;
   background: inherit;
-  font-size: 24px;  
+  font-size: 27px;  
 `
 
 

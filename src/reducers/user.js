@@ -1,10 +1,6 @@
-/* eslint-disable */
 import { createSlice } from "@reduxjs/toolkit";
 
 
-//Create a separate variable for the inital state to toggle between
-// logged in or not logged in user. 
-//The variable is called in the user-createSlice
 const initialState = localStorage.getItem("user")
   ? {
     userId: JSON.parse(localStorage.getItem("user")).userId,
