@@ -1,14 +1,10 @@
-/* eslint-disable */
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "utils/utils";
-
 import openeye from "../assets/openeye.png";
 import closedeye from "../assets/closedeye.png";
-
 import "../login.css";
-
 import {
   SectionContainer,
   FormContainer,
@@ -25,12 +21,9 @@ import {
   EyeButton,
   EyeSymbol,
 } from "./LoginStyling";
-
 import user from "reducers/user";
-
 const Login = () => {
   const accessToken = useSelector((store) => store.user.accessToken);
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
@@ -38,16 +31,12 @@ const Login = () => {
   const [isPanelActive, setIsPanelActive] = useState("");
   // const [errorMessage, setErrorMessage] = useState("");
   const [validationError, setValidationError] = useState("");
-
   // const [mode, setMode] = useState("login");
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
-
   const onToggleClick = () => {
     setValidationError("");
     setUsername("");
@@ -61,16 +50,13 @@ const Login = () => {
       setIsPanelActive(false);
     }
   };
-
   useEffect(() => {
     if (accessToken) {
       navigate("/");
     }
   }, [accessToken, navigate]);
-
   const onFormSubmit = (event) => {
     event.preventDefault();
-
     const options = {
       method: "POST",
       headers: {
@@ -78,21 +64,21 @@ const Login = () => {
       },
       body: JSON.stringify({ username, password }),
     };
+<<<<<<< HEAD
 
     console.log(options)
 
+=======
+>>>>>>> 045cb68f1a997c1306421e2ff85c2cb821dab02f
     fetch(API_URL(switchMode), options)
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
           dispatch(user.actions.setAccessToken(data.accessToken));
-
           dispatch(user.actions.setUserId(data.userId));
-
           dispatch(user.actions.setUserName(data.username));
           dispatch(user.actions.setError(null));
           setValidationError(data.message);
-
           localStorage.setItem(
             "user",
             JSON.stringify({
@@ -110,7 +96,6 @@ const Login = () => {
         }
       });
   };
-
   return (
     <SectionContainer>
       <Title>TRAVEL JUNKIES</Title>
@@ -221,7 +206,6 @@ const Login = () => {
             </ErrorMessageContainer>
           </FormContainer>
         </div>
-
         <div className="overlay-container">
           <div className="overlay">
             <div className="panel panel-left">
@@ -244,5 +228,4 @@ const Login = () => {
     </SectionContainer>
   );
 };
-
 export default Login;

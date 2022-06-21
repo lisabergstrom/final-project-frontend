@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components/macro"
 
 const devices = {
   tablet: '(min-width: 768px)',
@@ -7,13 +7,35 @@ const devices = {
 
 export const Contentcontainer = styled.div`
   width: 100%;
-  height: 200px;
-  background-color: white;
+  background-color: #F2EEE5;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  // @media ${devices.tablet} {
+  // }
+  
+  @media ${devices.desktop} {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 `
+
+
+// export const Clockbox = styled.div`
+// height: 200px;
+// margin-bottom: 10px;
+
+// @media ${devices.tablet} {
+//   }
+  
+//   @media ${devices.desktop} {
+//     flex-direction: row;
+//   }
+// `
+
+
 export const ImageContainer = styled.div`
 display: flex;
 flex-direction: column; 

@@ -9,6 +9,7 @@ import dream from "../assets/dream.jpg"
 import nature from "../assets/nature.jpg"
 
 import {Contentcontainer, Imagebox, Images, Quotes, ImageContainer, TextContent} from "./MainStyles"
+import Weather from "./Weather";
 
 
 const Main = () => {
@@ -18,7 +19,10 @@ const Main = () => {
       <>
        <Header/>
       <Contentcontainer>
+        {/* <Clockbox> */}
       <TimeTicker />
+      {/* </Clockbox> */}
+        <Weather/>
       </Contentcontainer>
       <ImageContainer>
       <Imagebox>
