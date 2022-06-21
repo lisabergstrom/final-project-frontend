@@ -9,10 +9,7 @@ const Footer = () => {
       <FooterText>   Created by Emma, Terese and Lisa | Technigo Fontend Bootcamp 2022
       <Signout/>
       </FooterText>
-   
-  
       </Box>
-   
   );
 };
 export default Footer;

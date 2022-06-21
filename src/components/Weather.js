@@ -70,11 +70,10 @@ const Weather  = () => {
           onChange={(e) => handleChange(e)}
         />
         <SubmitButton onClick={(e) => weatherData(e)}>
-          Submit
+          Check
         </SubmitButton>
       </WeatherForm>
 
-   
       {weather.data !== undefined ? (
         <div>
           <DisplayWeather data={weather.data} />

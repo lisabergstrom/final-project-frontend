@@ -6,6 +6,7 @@ import {NoteBox} from "./NotesStyles"
 import NotesInput from "./NotesInput"
 import NotesList from "./NotesList"
 
+
 const Notes = () => {
     return(
         <div>

@@ -2,14 +2,25 @@ import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
 import { API_GET_NOTES, API_DELETE_NOTES } from "utils/utils"
-import { NotesCollection, NotesHeader, NoteContainer, NoteHeader, NoteMessage,TagContainer, NoteTag, DeleteNote, EmptyCollection, EmptyHeading, EmptyMessage } from "./NotesStyles"
+
+import { 
+  NotesCollection, 
+  NotesHeader, 
+  NoteContainer, 
+  NoteHeader, 
+  NoteMessage,
+  TagContainer, 
+  NoteTag, 
+  DeleteNote, 
+  EmptyCollection, 
+  EmptyHeading, 
+  EmptyMessage 
+} from "./NotesStyles"
 
 import notes from "../reducers/notes"
 
 
-
 const NotesList = () => {
-  //Initial state
   const noteItems = useSelector((store) => store.notes.items)
 
   const accessToken = useSelector((store) => store.user.accessToken)
