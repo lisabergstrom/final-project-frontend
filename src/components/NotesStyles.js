@@ -5,21 +5,27 @@ const devices = {
   desktop: '(min-width: 1024px)'
 }
 
+export const NoteBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
 /***************** NOTES INPUT *********************/
 
 export const InputContainer = styled.div`
   background-color: #F2EEE5;
   padding:15px;
-  margin: 20px;
+  margin: 10px;
   box-shadow: 3px 3px 5px 3px #00000040;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 80%;
 
   @media ${devices.tablet} {
-    max-width: 400px;
-    
+    max-width: 400px; 
   }
 
   @media ${devices.desktop} {
@@ -150,13 +156,12 @@ export const NoteMessage = styled.p`
   font-size: 18px;
   margin: 5px;
   overflow-y: auto;
-  height: 220px;
+  height: 250px;
 `
 
 export const TagContainer = styled.div`
- margin-top: 10px;
+ margin-top: 15px;
  padding: 5px;
- background-color: blue;
 `
 export const NoteTag = styled.button`
   border: none;
