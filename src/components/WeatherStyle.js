@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 const devices = {
     tablet: '(min-width: 768px)',
@@ -26,6 +26,7 @@ margin: 20px;
 
 @media ${devices.tablet} {
     padding: 25px;
+    
 }
 
 
@@ -49,9 +50,10 @@ padding: 10px;
 `
 
 export const Input = styled.input`
-width: 250px;
+width: 270px;
 height: 50px;
 color: #000;
+
 
 @media ${devices.tablet} {
   
