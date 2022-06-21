@@ -18,16 +18,17 @@ export const Contentcontainer = styled.div`
   
   @media ${devices.desktop} {
     flex-direction: row;
+    justify-content: space-evenly;
   }
 `
 
 
-export const Clockbox = styled.div`
-height: 200px;
-margin-bottom: 10px;
+// export const Clockbox = styled.div`
+// height: 200px;
+// margin-bottom: 10px;
 
-// // @media ${devices.tablet} {
-//   // }
+// @media ${devices.tablet} {
+//   }
   
 //   @media ${devices.desktop} {
 //     flex-direction: row;

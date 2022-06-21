@@ -10,7 +10,6 @@ import {
   WeatherIcon,
   WeatherDescription,
   Temp,
-  Message,
   WeatherInfo,
  } from "./WeatherStyle";
 
@@ -65,7 +64,7 @@ const DisplayWeather = (props) => {
         </React.Fragment>
       ) : (
         <MainCard>
-          <Message>{data.message}</Message>
+          <h2>{data.message}</h2>
         </MainCard>
       )}
     </WeatherDisplay>

@@ -14,6 +14,7 @@ flex-wrap: wrap;
 border: 1px solid black;
 border-radius: 10px;
 margin: 30px;
+
 `
 
 export const WeatherForm = styled.form`
@@ -23,15 +24,24 @@ flex-wrap: wrap;
 padding: 10px;
 margin: 20px;
 
+@media ${devices.tablet} {
+    padding: 25px;
+}
+
+
 @media ${devices.desktop} {
-    padding: 20px;
+    padding: 40px;
    }
 `
-
 
 export const WeatherTitle = styled.span`
 font-size: 1.5rem;
 text-align: center;
+padding: 10px;
+
+@media ${devices.tablet} {
+    font-size: 2rem;
+  }
 
 @media ${devices.desktop} {
     font-size: 3rem;
@@ -41,24 +51,33 @@ text-align: center;
 export const Input = styled.input`
 width: 250px;
 height: 50px;
-color: black;
+color: #000;
+
+@media ${devices.tablet} {
+  
+  }
 
 @media ${devices.desktop} {
-    width: 300px;
-    height: 70px;
+    width: 280px;
+    height: 60px;
   }
 
 `
 
 export const SubmitButton = styled.button`
 background-color: #F2EEE5;
-color: BE7575;
+color: #BE7575;
 padding: 10px;
 border-radius: 10px;
 margin: 20px;
 
+@media ${devices.tablet} {
+    margin: 10px;
+    width: 80px;
+  }
+
 @media ${devices.desktop} {
-    margin:0 0 0 10px;
+    margin:0 0 0 20px;
     width: 100px;
   }
 `
@@ -68,6 +87,14 @@ export const WeatherDisplay = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
+
+// @media ${devices.tablet} {
+  
+//   }
+
+// @media ${devices.desktop} {
+  
+//   }
 
 `
 
@@ -101,6 +128,7 @@ export const WeatherSections = styled.div`
 display: flex;
 justify-content: center;
 text-align: center;
+padding: 10px;
 
 @media ${devices.desktop} {
     margin: 30px;
@@ -121,8 +149,17 @@ flex-direction: column;
 `
 
 export const WeatherMain = styled.span`
-font-size: 2rem;
-color: red;
+font-size: 2.5rem;
+color: #F6AD7B;
+text-align: center;
+
+// @media ${devices.tablet} {
+ 
+//   }
+
+@media ${devices.desktop} {
+    font-size: 3rem;
+  }
 
 `
 
@@ -139,8 +176,9 @@ align-self: center;
 `
 
 export const WeatherDescription = styled.span`
-font-size: 3rem;
+font-size: 2rem;
 text-align: center;
+padding: 10px;
 `
 
 export const Temp = styled.h1`
@@ -151,10 +189,6 @@ text-align: center;
    font-size: 5rem;
   }
 
-`
-
-export const Message = styled.h2`
-font-size: 2rem;
 `
 
 export const WeatherInfo = styled.span`
