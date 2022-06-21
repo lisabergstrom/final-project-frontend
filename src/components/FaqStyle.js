@@ -22,12 +22,12 @@ export const Header = styled.h3`
   font-weight: bold;
   padding: 10px 10px 0px 10px;
 
-  @media (min-width: 768px) {
+  @media ${devices.tablet}  {
     width: 443px;
     margin-left: 23%;
   }
 
-  @media(min-width:1024px) {
+  @media${devices.desktop}  {
       width:443px;
       margin-left: 35%;
     }
