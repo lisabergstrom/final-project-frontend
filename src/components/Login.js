@@ -64,12 +64,6 @@ const Login = () => {
       },
       body: JSON.stringify({ username, password }),
     };
-<<<<<<< HEAD
-
-    console.log(options)
-
-=======
->>>>>>> 045cb68f1a997c1306421e2ff85c2cb821dab02f
     fetch(API_URL(switchMode), options)
       .then((res) => res.json())
       .then((data) => {
