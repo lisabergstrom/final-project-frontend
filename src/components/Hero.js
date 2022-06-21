@@ -24,23 +24,26 @@ const Content = styled.img`
 `;
 
  const Text = styled.p`
-    text-align: center;
-    position: absolute;
-    top: 20%;
-    left: 65%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 35px;
-    width: 50%;
-    font-family: 'Satisfy', cursive;
+display: none;
 
     @media (min-width: 667px) {
+      display:block;
         top: 30%;
         left: 60%;
         font-size: 70px;
+        text-align: center;
+        position: absolute;
+        top: 20%;
+        left: 65%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        // font-size: 35px;
+        width: 50%;
+        font-family: 'Satisfy', cursive;
       }
       
       @media (min-width: 992px) { 
+        display:block;
         top: 40%;
         font-size: 100px;
       }

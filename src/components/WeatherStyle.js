@@ -52,9 +52,10 @@ export const Input = styled.input`
 width: 250px;
 height: 50px;
 color: #000;
+margin: 5px;
 
 @media ${devices.tablet} {
-  
+    margin: 20px;
   }
 
 @media ${devices.desktop} {
