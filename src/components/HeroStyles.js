@@ -35,6 +35,7 @@ const devices = {
       left: 65%;
       transform: translate(-50%, -50%);
       color: #fff;
+      text-shadow: 3px 3px #212529;
       font-size: 35px;
       width: 50%;
       font-family: 'Satisfy', cursive;
