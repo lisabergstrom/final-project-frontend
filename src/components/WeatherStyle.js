@@ -53,7 +53,16 @@ export const Input = styled.input`
 width: 270px;
 height: 50px;
 color: #000;
+margin: 5px;
 
+<<<<<<< HEAD
+=======
+
+@media ${devices.tablet} {
+    margin: 20px;
+  }
+
+>>>>>>> 6873ea12a270d2ca7508f4680a1b2a2715a9a27e
 @media ${devices.desktop} {
     width: 280px;
     height: 60px;
