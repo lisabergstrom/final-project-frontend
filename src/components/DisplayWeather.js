@@ -11,7 +11,7 @@ import {
   WeatherDescription,
   Temp,
   WeatherInfo,
- } from "./WeatherStyle";
+ } from "./WeatherStyles";
 
 const DisplayWeather = (props) => {
   const { data } = props;

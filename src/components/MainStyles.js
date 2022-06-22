@@ -12,9 +12,6 @@ export const Contentcontainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  // @media ${devices.tablet} {
-  // }
   
   @media ${devices.desktop} {
     flex-direction: row;

@@ -6,7 +6,7 @@ TimeWrapper,
 Timer,
 Label, 
 }
-from "./TickingClockStyling"
+from "./TickingClockStyles"
 
 const TimeTicker = () => {
   const [timeState, setTimeState] = useState();
