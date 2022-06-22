@@ -13,6 +13,7 @@ export const TimeWrapper = styled.div`
   // height: 200px;
   margin-top: 10px;
 
+
 `;
 
 export const Timer = styled.h4`

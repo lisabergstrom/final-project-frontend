@@ -30,7 +30,7 @@ margin: 20px;
 
 
 @media ${devices.desktop} {
-    padding: 40px;
+
    }
 `
 
@@ -77,13 +77,14 @@ margin-left: 95px;
 @media ${devices.tablet} {
     margin: 10px;
     width: 80px;
+   
   }
 
 @media ${devices.desktop} {
     // margin:0 0 0 20px;
     width: 100px;
     height: 50px;
-   
+    margin-left: 0
   }
 `
 
