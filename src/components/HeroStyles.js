@@ -27,7 +27,7 @@ export const Content = styled.img`
   }
 `;
 
-const Text = styled.p`
+export const Text = styled.p`
   display: none;
 
   @media (min-width: 667px) {
