@@ -32,6 +32,7 @@ export const Text = styled.p`
 
   @media (min-width: 667px) {
     display: block;
+    text-shadow: 3px 3px #212529;
     top: 30%;
     left: 60%;
     font-size: 70px;
@@ -46,7 +47,7 @@ export const Text = styled.p`
     font-family: "Satisfy", cursive;
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: 1024px) {
     display: block;
     top: 40%;
     font-size: 100px;
