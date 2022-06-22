@@ -27,7 +27,6 @@ color: #C2E8CE;
 font-family: oxygen mono;
 text-align: center;
 border: 7px;
-border-style: dotted; 
 
 @media ${devices.tablet} {
   font-size: 3rem;
