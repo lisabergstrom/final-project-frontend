@@ -143,14 +143,17 @@ export const NoteContainer = styled.div`
   min-height: 40vh;
 
   @media ${devices.tablet} {
-    width: 40%;
+    width: 300px;
   }
+
+  
 `
 
-export const NoteHeader = styled.p`
+export const NoteHeader = styled.h3`
   font-size: 20px;
   margin: 5px;
   text-align: center;
+  font-family: 'Satisfy',cursive;
 `
 export const NoteMessage = styled.p`
   font-size: 18px;
@@ -177,10 +180,14 @@ export const NoteTag = styled.button`
 export const DeleteNote = styled.button`
   position: absolute;
   top: 10px;
-  right: 15px;
+  right: 10px;
   border: none;
   background: inherit;
-  font-size: 27px;  
+  font-size: 20px;  
+
+  @media ${devices.desktop} {
+    font-size: 26px;  
+  }
 `
 
 
