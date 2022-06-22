@@ -80,8 +80,10 @@ margin-left: 95px;
   }
 
 @media ${devices.desktop} {
-    margin:0 0 0 20px;
+    // margin:0 0 0 20px;
     width: 100px;
+    height: 50px;
+   
   }
 `
 
