@@ -9,7 +9,7 @@ const devices = {
 export const WeatherWrapper = styled.div`
 display: flex;
 justify-content: center;
-flex-direction: column;
+flex-direction: row;
 flex-wrap: wrap;
 border: 1px solid black;
 border-radius: 10px;
@@ -54,11 +54,6 @@ width: 270px;
 height: 50px;
 color: #000;
 
-
-@media ${devices.tablet} {
-  
-  }
-
 @media ${devices.desktop} {
     width: 280px;
     height: 60px;
@@ -89,15 +84,6 @@ export const WeatherDisplay = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
-
-// @media ${devices.tablet} {
-  
-//   }
-
-// @media ${devices.desktop} {
-  
-//   }
-
 `
 
 export const MainCard = styled.div`
@@ -105,13 +91,13 @@ display: flex;
 flex-direction: column;
 justify-content: space-evenly;
 
-// @media ${devices.tablet} {
-    // }
+@media ${devices.tablet} {
+  flex-direction: column;
+    }
     
     @media ${devices.desktop} {
       flex-direction: row;
     }
-  
 
 `
 
@@ -154,10 +140,6 @@ export const WeatherMain = styled.span`
 font-size: 2.5rem;
 color: #F6AD7B;
 text-align: center;
-
-// @media ${devices.tablet} {
- 
-//   }
 
 @media ${devices.desktop} {
     font-size: 3rem;
