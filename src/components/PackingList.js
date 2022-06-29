@@ -1,20 +1,20 @@
-import React from "react";
+import React from "react"
 
-import PackingListInput from "./PackingListInput";
-import PackingListItems from "./PackingListItems";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import PackingListInput from "./PackingListInput"
+import PackingListItems from "./PackingListItems"
+import Navbar from "./Navbar"
+import Footer from "./Footer"
 
 
 const PackingList = () => {
   return (
-   <div>
-       <Navbar />
+    <div>
+      <Navbar />
       <PackingListInput />
       <PackingListItems />
-      <Footer/>
+      <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default PackingList;
+export default PackingList

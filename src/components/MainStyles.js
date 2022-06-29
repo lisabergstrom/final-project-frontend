@@ -12,10 +12,7 @@ export const Contentcontainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  // @media ${devices.tablet} {
-  // }
-  
+ 
   @media ${devices.desktop} {
     flex-direction: row;
     justify-content: space-evenly;
@@ -23,31 +20,31 @@ export const Contentcontainer = styled.div`
 `
 
 export const ImageContainer = styled.div`
-display: flex;
-flex-direction: column; 
-justify-content: center;
-align-items: center;
-margin: 25px 10px 20px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  margin: 25px 10px 20px;
 
-@media ${devices.tablet} {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
+  @media ${devices.tablet} {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
 
-@media ${devices.desktop} {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
+  @media ${devices.desktop} {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
 
 `
 export const Imagebox = styled.div`
- margin: 5px;
- display: flex;
-flex-direction: column; 
-justify-content: center;
-align-items: center;
+  margin: 5px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
 `
 
 export const Images = styled.img`
@@ -85,7 +82,6 @@ export const TextContent = styled.div`
     width: 350px;
     margin: 20px;
   }
-  
 `
 
 export const Quotes = styled.p`

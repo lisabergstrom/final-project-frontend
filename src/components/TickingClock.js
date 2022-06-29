@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from 'react';
 
 
-import { 
-TimeWrapper,
-Timer,
-Label, 
+import {
+  TimeWrapper,
+  Timer,
+  Label,
 }
-from "./TickingClockStyling"
+  from "./TickingClockStyling"
 
 const TimeTicker = () => {
-  const [timeState, setTimeState] = useState();
+  const [timeState, setTimeState] = useState()
 
   useEffect(() => {
     setInterval(() => {
-      const date = new Date();
-      setTimeState(date.toLocaleTimeString());
-    }, 1000);
-  }, []);
+      const date = new Date()
+      setTimeState(date.toLocaleTimeString())
+    }, 1000)
+  }, [])
 
   return (
     <TimeWrapper>
       <Label>Your local time is</Label>
       <Timer>{timeState}</Timer>
     </TimeWrapper>
-  );
-};
+  )
+}
 
-export default TimeTicker;
+export default TimeTicker

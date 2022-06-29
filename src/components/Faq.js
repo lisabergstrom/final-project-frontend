@@ -1,8 +1,10 @@
-import React from 'react';
-import Accordion from 'components/Accordion';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import { Header } from "./FaqStyle";
+import React from 'react'
+
+import Accordion from 'components/Accordion'
+import Navbar from './Navbar'
+import Footer from './Footer'
+
+import { Header } from "./FaqStyle"
 
 const Faq = () => {
   const accordionData = [
@@ -37,29 +39,30 @@ const Faq = () => {
       take out travel insurance or check if you have home insurance with travel protection before the trip begins`
     },
     {
-        id: 5,
-        title: 'Do you have a visa question?',
-        content: `Check the current entry regulations with the authorities of the country's you are traveling to or the countrys nearest embassy.`
-      },
-      {
-        id: 6,
-        title: 'When does the embassy open and close?',
-        content: `Information about the embassies' opening hours and telephone hours can be found on each embassy's page.
+      id: 5,
+      title: 'Do you have a visa question?',
+      content: `Check the current entry regulations with the authorities of the country's you are traveling to or the countrys nearest embassy.`
+    },
+    {
+      id: 6,
+      title: 'When does the embassy open and close?',
+      content: `Information about the embassies' opening hours and telephone hours can be found on each embassy's page.
         In the event of an emergency emergency abroad, outside the embassy's regular opening hours, you can always reach the official on duty at the Ministry of Foreign Affairs by calling the embassy's telephone exchange and following the instructions.`
-      }
-  ];
+    }
+  ]
 
   return (
     <div>
-       <Navbar />
+      <Navbar />
       <Header>Travel Questions</Header>
       <div className="accordion">
-        {accordionData.map(({ title, content, id}) => (
+        {accordionData.map(({ title, content, id }) => (
           <Accordion key={id} title={title} content={content} />
         ))}
       </div>
-      <Footer/>
+      <Footer />
     </div>
-  );
-};
-export default Faq;
+  )
+}
+
+export default Faq

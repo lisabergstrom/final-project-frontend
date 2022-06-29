@@ -44,36 +44,31 @@ export const ContactBox = styled.div`
     margin: 8px;
     height: 60vh;
   }
-
-  @media ${devices.desktop} {
-    
-  }
 `
 
 export const Contributors = styled.h3`
-font-family: 'Satisfy',cursive;
-font-size: 20px;
-text-align: center;
-margin-top: 8px;
+  font-family: 'Satisfy',cursive;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 8px;
 `
 export const Description = styled.p`
   text-align: center;
   font-size: 16px;
 `
 export const LinkContainer = styled.div`
-display: flex;  
-flex-direction: column;
-justify-content: center;
-align-items: center;
-
+  display: flex;  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 export const ContactLinks = styled.a`
- text-decoration: none;
- color: #BE7575;
- padding: 3px;
- font-size: 14px;
- font-weight: bold;
+  text-decoration: none;
+  color: #BE7575;
+  padding: 3px;
+  font-size: 14px;
+  font-weight: bold;
 `
 
 export const ContactImage = styled.img`

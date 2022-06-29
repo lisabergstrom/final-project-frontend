@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { API_URL } from "utils/utils";
-import openeye from "../assets/openeye.png";
-import closedeye from "../assets/closedeye.png";
-import "../login.css";
+import React, { useState, useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
+
+import { API_URL } from "utils/utils"
+import openeye from "../assets/openeye.png"
+import closedeye from "../assets/closedeye.png"
+
+import user from "reducers/user"
 
 import {
   SectionContainer,
@@ -21,60 +23,62 @@ import {
   ShowPassword,
   EyeButton,
   EyeSymbol,
-} from "./LoginStyles";
+} from "./LoginStyles"
+
+import "../login.css"
 
 
-import user from "reducers/user";
+
 const Login = () => {
-  const accessToken = useSelector((store) => store.user.accessToken);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordShown, setPasswordShown] = useState(false);
-  const [switchMode, setSwitchMode] = useState("login");
-  const [isPanelActive, setIsPanelActive] = useState("");
-  const [validationError, setValidationError] = useState("");
-  
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const accessToken = useSelector((store) => store.user.accessToken)
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  const [passwordShown, setPasswordShown] = useState(false)
+  const [switchMode, setSwitchMode] = useState("login")
+  const [isPanelActive, setIsPanelActive] = useState("")
+  const [validationError, setValidationError] = useState("")
+
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const togglePassword = () => {
-    setPasswordShown(!passwordShown);
-  };
+    setPasswordShown(!passwordShown)
+  }
   const onToggleClick = () => {
-    setValidationError("");
-    setUsername("");
-    setPassword("");
-    setPasswordShown(false);
+    setValidationError("")
+    setUsername("")
+    setPassword("")
+    setPasswordShown(false)
     if (switchMode === "login") {
       setSwitchMode("register")
       setIsPanelActive(true)
     } else {
-      setSwitchMode("login");
-      setIsPanelActive(false);
+      setSwitchMode("login")
+      setIsPanelActive(false)
     }
   };
   useEffect(() => {
     if (accessToken) {
-      navigate("/");
+      navigate("/")
     }
-  }, [accessToken, navigate]);
+  }, [accessToken, navigate])
   const onFormSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ username, password }),
-    };
+    }
     fetch(API_URL(switchMode), options)
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          dispatch(user.actions.setAccessToken(data.accessToken));
-          dispatch(user.actions.setUserId(data.userId));
-          dispatch(user.actions.setUserName(data.username));
-          dispatch(user.actions.setError(null));
-          setValidationError(data.message);
+          dispatch(user.actions.setAccessToken(data.accessToken))
+          dispatch(user.actions.setUserId(data.userId))
+          dispatch(user.actions.setUserName(data.username))
+          dispatch(user.actions.setError(null))
+          setValidationError(data.message)
           localStorage.setItem(
             "user",
             JSON.stringify({
@@ -84,15 +88,15 @@ const Login = () => {
             })
           );
         } else {
-          dispatch(user.actions.setValidationError(data.response));
-          dispatch(user.actions.setUserId(null));
-          dispatch(user.actions.setAccessToken(null));
-          dispatch(user.actions.setUserName(null));
-          setValidationError(data.message);
+          dispatch(user.actions.setValidationError(data.response))
+          dispatch(user.actions.setUserId(null))
+          dispatch(user.actions.setAccessToken(null))
+          dispatch(user.actions.setUserName(null))
+          setValidationError(data.message)
         }
-      });
-  };
-  
+      })
+  }
+
   return (
     <SectionContainer>
       <Title>TRAVEL JUNKIES</Title>
@@ -223,6 +227,7 @@ const Login = () => {
         </div>
       </div>
     </SectionContainer>
-  );
-};
-export default Login;
+  )
+}
+
+export default Login

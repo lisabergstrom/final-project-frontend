@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import { Content, Text } from './HeroStyles';
+import { Content, Text } from './HeroStyles'
 
 
 const Hero = () => {
-    return(
+    return (
         <>
-        <Content/>
-        <Text>Travel Junkies</Text>
+            <Content />
+            <Text>Travel Junkies</Text>
         </>
     )
 }

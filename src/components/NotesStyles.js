@@ -145,8 +145,6 @@ export const NoteContainer = styled.div`
   @media ${devices.tablet} {
     width: 300px;
   }
-
-  
 `
 
 export const NoteHeader = styled.h3`
@@ -163,8 +161,8 @@ export const NoteMessage = styled.p`
 `
 
 export const TagContainer = styled.div`
- margin-top: 15px;
- padding: 5px;
+  margin-top: 15px;
+  padding: 5px;
 `
 export const NoteTag = styled.button`
   border: none;

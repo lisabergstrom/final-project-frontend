@@ -4,10 +4,10 @@ import Navbar from "./Navbar"
 import Hero from "./Hero"
 
 const Header = () => {
-    return(
+    return (
         <div>
-            <Navbar/>
-            <Hero/>
+            <Navbar />
+            <Hero />
         </div>
     )
 }

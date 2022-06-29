@@ -1,23 +1,23 @@
 import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 
+import notes from "../reducers/notes"
+
 import { API_GET_NOTES, API_DELETE_NOTES } from "utils/utils"
 
-import { 
-  NotesCollection, 
-  NotesHeader, 
-  NoteContainer, 
-  NoteHeader, 
+import {
+  NotesCollection,
+  NotesHeader,
+  NoteContainer,
+  NoteHeader,
   NoteMessage,
-  TagContainer, 
-  NoteTag, 
-  DeleteNote, 
-  EmptyCollection, 
-  EmptyHeading, 
-  EmptyMessage 
+  TagContainer,
+  NoteTag,
+  DeleteNote,
+  EmptyCollection,
+  EmptyHeading,
+  EmptyMessage
 } from "./NotesStyles"
-
-import notes from "../reducers/notes"
 
 
 const NotesList = () => {
@@ -86,10 +86,10 @@ const NotesList = () => {
                 <NoteMessage>{item.message}</NoteMessage>
               </div>
               <TagContainer>
-              <NoteTag>{item.tags}</NoteTag>
+                <NoteTag>{item.tags}</NoteTag>
               </TagContainer>
               <DeleteNote onClick={() => deleteNote(item._id)}>
-              <span role='img' aria-label='delete'>🗑</span>
+                <span role='img' aria-label='delete'>🗑</span>
               </DeleteNote>
             </NoteContainer>
           ))}

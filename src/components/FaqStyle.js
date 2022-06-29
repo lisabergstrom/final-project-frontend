@@ -6,12 +6,13 @@ const devices = {
 }
 
 export const Header = styled.h3`
- font-family: 'Satisfy',cursive;
- font-size: 35px;
- margin:30px;
- text-align: center;
- `;
- export const AccordionItem = styled.div`
+  font-family: 'Satisfy',cursive;
+  font-size: 35px;
+  margin:30px;
+  text-align: center;
+ `
+
+export const AccordionItem = styled.div`
   box-shadow: 3px 3px 5px 3px #00000040;
   background-color: #F2EEE5;
   width: 250px;
@@ -31,21 +32,21 @@ export const Header = styled.h3`
       width:443px;
       margin-left: 35%;
     }
- `;
+ `
 
- export const  AccordionTitle = styled.div`
- background-color: #F2EEE5
- `;
+export const AccordionTitle = styled.div`
+   background-color: #F2EEE5
+ `
 
- export const  TitleActive = styled.div`
- background-color: #F2EEE5;
- `;
+export const TitleActive = styled.div`
+   background-color: #F2EEE5;
+ `
 
- export const  AccContent = styled.div`
- background-color: #F2EEE5;
- padding: 10px;
- `;
+export const AccContent = styled.div`
+   background-color: #F2EEE5;
+   padding: 10px;
+ `
 
- export const  PlusMinus = styled.div`
- font-size: 20px;
- `;
+export const PlusMinus = styled.div`
+   font-size: 20px;
+ `

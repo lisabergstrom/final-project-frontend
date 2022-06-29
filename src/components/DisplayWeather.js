@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 
-import { 
+import {
   WeatherDisplay,
   MainCard,
   SubTitles,
@@ -11,14 +11,16 @@ import {
   WeatherDescription,
   Temp,
   WeatherInfo,
- } from "./WeatherStyle";
+} from "./WeatherStyle"
+
 
 const DisplayWeather = (props) => {
-  const { data } = props;
+  const { data } = props
   const iconurl =
     "https://openweathermap.org/img/wn/" +
     `${data.cod !== 404 ? data.weather[0].icon : null}` +
-    ".png";
+    ".png"
+
   return (
     <WeatherDisplay>
       {data.cod !== 404 ? (
@@ -40,24 +42,24 @@ const DisplayWeather = (props) => {
             <WeatherSections>
               <div>
                 <SubTitles>High/Low</SubTitles>
-                    <WeatherInfo>
-                      {Math.floor(data.main.temp_max - 273.15)}/
-                      {Math.floor(data.main.temp_min - 273.15)}
-                    </WeatherInfo>
-                    <SubTitles>Humidity</SubTitles>
-                    <WeatherInfo>{data.main.humidity} %</WeatherInfo>
+                <WeatherInfo>
+                  {Math.floor(data.main.temp_max - 273.15)}/
+                  {Math.floor(data.main.temp_min - 273.15)}
+                </WeatherInfo>
+                <SubTitles>Humidity</SubTitles>
+                <WeatherInfo>{data.main.humidity} %</WeatherInfo>
               </div>
             </WeatherSections>
             <WeatherSections>
               <div>
-                    <SubTitles>Sunrise</SubTitles>
-                    <WeatherInfo>
-                      {new Date(data.sys.sunrise * 1000).toLocaleTimeString()}
-                    </WeatherInfo>
-                    <SubTitles>Sunset</SubTitles>
-                    <WeatherInfo>
-                      {new Date(data.sys.sunset * 1000).toLocaleTimeString()}
-                    </WeatherInfo>
+                <SubTitles>Sunrise</SubTitles>
+                <WeatherInfo>
+                  {new Date(data.sys.sunrise * 1000).toLocaleTimeString()}
+                </WeatherInfo>
+                <SubTitles>Sunset</SubTitles>
+                <WeatherInfo>
+                  {new Date(data.sys.sunset * 1000).toLocaleTimeString()}
+                </WeatherInfo>
               </div>
             </WeatherSections>
           </WeatherDetails>
@@ -71,4 +73,4 @@ const DisplayWeather = (props) => {
   );
 }
 
-export default DisplayWeather;
+export default DisplayWeather

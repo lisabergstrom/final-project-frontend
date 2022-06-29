@@ -1,28 +1,28 @@
-import React, { useState } from "react";
-import DisplayWeather from "./DisplayWeather";
+import React, { useState } from "react"
 
-import { 
+import DisplayWeather from "./DisplayWeather"
+
+import {
   WeatherWrapper,
   WeatherForm,
   WeatherTitle,
   SubmitButton,
   Input,
- } from "./WeatherStyle";
+} from "./WeatherStyle"
 
-const dotenv = require("dotenv");
+const dotenv = require("dotenv")
+dotenv.config({ path: ".env" })
 
-dotenv.config({ path: ".env" });
 
+const Weather = () => {
 
-const Weather  = () => {
- 
- const APIKEY = process.env.REACT_APP_API_KEY
+  const APIKEY = process.env.REACT_APP_API_KEY
 
-   const [weather, setWeather] = useState([]);
-   const [form, setForm] = useState({
+  const [weather, setWeather] = useState([])
+  const [form, setForm] = useState({
     city: "",
     country: "",
-  });
+  })
 
   async function weatherData(e) {
 
@@ -30,27 +30,28 @@ const Weather  = () => {
     if (form.city === "") {
       alert("Add values");
     } else {
-          const data = await fetch(
+      const data = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&APPID=${APIKEY}`
-        )
+      )
         .then((res) => res.json())
-        .then((data) => data);
+        .then((data) => data)
 
-      setWeather({ data: data });
+      setWeather({ data: data })
     }
   }
 
   const handleChange = (e) => {
-    let name = e.target.name;
-    let value = e.target.value;
+    let name = e.target.name
+    let value = e.target.value
 
     if (name === "city") {
-      setForm({ ...form, city: value });
+      setForm({ ...form, city: value })
     }
     if (name === "country") {
-      setForm({ ...form, country: value });
+      setForm({ ...form, country: value })
     }
-  };
+  }
+
   return (
     <WeatherWrapper>
       <WeatherTitle>Check the weather at your destination</WeatherTitle>
@@ -80,8 +81,7 @@ const Weather  = () => {
         </div>
       ) : null}
     </WeatherWrapper>
-  );
+  )
 }
 
-
-export default Weather;
+export default Weather

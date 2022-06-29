@@ -1,21 +1,24 @@
 import React from "react"
-import Navbar from "./Navbar"
-import Footer from "./Footer"
-import {NoteBox} from "./NotesStyles"
 
+import Navbar from "./Navbar"
 import NotesInput from "./NotesInput"
 import NotesList from "./NotesList"
+import Footer from "./Footer"
+
+import { NoteBox } from "./NotesStyles"
+
+
 
 
 const Notes = () => {
-    return(
+    return (
         <div>
-             <Navbar />
-             <NoteBox>
-            <NotesInput/>
-            <NotesList/>
+            <Navbar />
+            <NoteBox>
+                <NotesInput />
+                <NotesList />
             </NoteBox>
-            <Footer/>
+            <Footer />
         </div>
     )
 }

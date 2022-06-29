@@ -7,23 +7,23 @@ const devices = {
 
 
 export const SignOut = styled.button`
-padding: 3px 16px;
-cursor: pointer;
-font-family: 'Comic Neue',cursive;
-background-color: #C2E8CE;
-border-radius: 20px;
-border: none;
-font-size: 10px;
+  padding: 3px 16px;
+  cursor: pointer;
+  font-family: 'Comic Neue',cursive;
+  background-color: #C2E8CE;
+  border-radius: 20px;
+  border: none;
+  font-size: 10px;
 
-@media ${devices.tablet} {
-  padding: 8px 22px;
+  @media ${devices.tablet} {
+    padding: 8px 22px;
     font-size: 14px;
     margin-left: 49px;
-}
+  }
 
-@media ${devices.desktop} {
-  font-size: 14px;
-  margin-left: 54px;
+  @media ${devices.desktop} {
+    font-size: 14px;
+    margin-left: 54px;
   }
 
 `

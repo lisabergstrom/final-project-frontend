@@ -52,4 +52,4 @@ export const Text = styled.p`
     top: 40%;
     font-size: 100px;
   }
-`;
+`

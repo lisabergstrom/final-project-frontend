@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-import { 
-  AccordionItem, 
-  AccordionTitle, 
-  TitleActive, 
-  AccContent, 
-  PlusMinus 
-} from "./FaqStyle";
+import {
+  AccordionItem,
+  AccordionTitle,
+  TitleActive,
+  AccContent,
+  PlusMinus
+} from "./FaqStyle"
 
 const Accordion = ({ title, content }) => {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(false)
+
   return (
     <AccordionItem>
       <TitleActive onClick={() => setIsActive(!isActive)}>
@@ -18,6 +19,7 @@ const Accordion = ({ title, content }) => {
       </TitleActive>
       {isActive && <AccContent>{content}</AccContent>}
     </AccordionItem>
-  );
-};
-export default Accordion;
+  )
+}
+
+export default Accordion
