@@ -1,19 +1,27 @@
-# Technigo React Starter App
+# Final Project Frontend
+For our final project we created a travel application.\
+When the user is logged in to his/her own page it's possible to access different pages
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+Homepage - The user can serach for weather at different locations\
+Packinglist - The user can create a packinglist and check items off\
+Map - By using the users coordinates\
+Notes - The user can write down notes and add tags\
+FAQ - An accordion with good to know things\
+Contact - A contact page with information to us
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+## Tech stack
+We used the following technologies
 
-## Usage
+React\
+Redux\
+React Router\
+PWA - Progressive Web Application
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+API- https://openweathermap.org/ 
 
-Alternatively, if you don't want a new git repo on your account;
+React Leaflet - a npm package for creating a map based on the users coordinates
 
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+## View it live
+Here you can see the deployed version
+
+https://traveljunkies.netlify.app/login 
