@@ -10,21 +10,21 @@ export const TimeWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 10px;
+  // height: 200px;
+  margin-top: 10px;
 `
 
 export const Timer = styled.h4`
-  font-size: 2rem;
-  line-height: 1.5rem;
-  font-weight: 100;
-  border-radius: 100px;
-  padding: 20px;
-  margin: 0;
-  color: #C2E8CE;
-  font-family: oxygen mono;
-  text-align: center;
-  border: 7px;
-  border-style: dotted; 
+font-size: 2rem;
+line-height: 1.5rem;
+font-weight: 100;
+border-radius: 100px;
+padding: 20px;
+margin: 0;
+color: #C2E8CE;
+font-family: oxygen mono;
+text-align: center;
+border: 7px;
 
   @media ${devices.tablet} {
     font-size: 3rem;

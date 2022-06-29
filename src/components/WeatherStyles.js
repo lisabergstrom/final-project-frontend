@@ -17,11 +17,11 @@ export const WeatherWrapper = styled.div`
 `
 
 export const WeatherForm = styled.form`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 10px;
-  margin: 20px;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+padding: 10px;
+margin: 20px;
 
   @media ${devices.tablet} {
     padding: 25px; 
@@ -29,7 +29,7 @@ export const WeatherForm = styled.form`
 
 
 @media ${devices.desktop} {
-    padding: 40px;
+
    }
 `
 
@@ -65,20 +65,24 @@ export const Input = styled.input`
 `
 
 export const SubmitButton = styled.button`
-  background-color: #F2EEE5;
-  color: #BE7575;
-  padding: 10px;
-  border-radius: 10px;
-  margin: 20px;
+background-color: #F2EEE5;
+color: #BE7575;
+padding: 10px;
+border-radius: 10px;
+margin: 20px;
+margin-left: 95px;
 
   @media ${devices.tablet} {
     margin: 10px;
     width: 80px;
+   
   }
 
-  @media ${devices.desktop} {
-    margin:0 0 0 20px;
+@media ${devices.desktop} {
+    // margin:0 0 0 20px;
     width: 100px;
+    height: 50px;
+    margin-left: 0
   }
 `
 

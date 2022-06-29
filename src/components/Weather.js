@@ -8,7 +8,7 @@ import {
   WeatherTitle,
   SubmitButton,
   Input,
-} from "./WeatherStyle"
+ } from "./WeatherStyles";
 
 const dotenv = require("dotenv")
 dotenv.config({ path: ".env" })

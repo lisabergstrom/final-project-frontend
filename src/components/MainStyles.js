@@ -12,7 +12,7 @@ export const Contentcontainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
- 
+  
   @media ${devices.desktop} {
     flex-direction: row;
     justify-content: space-evenly;
@@ -88,10 +88,10 @@ export const Quotes = styled.p`
   font-size: 16px;
 
   @media ${devices.tablet} {
-    font-size: 20px
+    font-size: 20px;
   }
 
   @media ${devices.tablet} {
-    font-size: 24px
+    font-size: 24px;
   }
 `
